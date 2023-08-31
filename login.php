@@ -131,7 +131,7 @@
 <!-- partial:index.partial.html -->
 <div class="wrapper">
   <aside>
-	<img src="/img/logo.svg" alt="">
+    <img src="/img/logo.svg" alt="">
 	<h2>Willkommen zurück!</h2>
 	<?php
 	  $env = parse_ini_file('.env');
@@ -162,6 +162,7 @@
 		echo 'No authentication method defined';
 		die;
 	  }
+
 	?>
 	<h2 class="top-auto">Interesse?</h2>
 	<p>Wenn Sie das Interface für Ihre Hochschule ausprobieren möchten, hinterlassen Sie bitte hier Ihre E-Mail-Adresse.</p>
@@ -171,7 +172,7 @@
 	  <button>Senden</button>
 	</form>
 	<a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
-	<a href="https://www.hawk.de/de/hochschule/download-und-servicecenter/impressum">Impressum</a>
+	<a href="/impressum" target="_blank">Impressum</a>
   </aside>
   
   <main>
