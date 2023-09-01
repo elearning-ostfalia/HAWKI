@@ -164,6 +164,7 @@
 	  }
 
 	?>
+      <!--
 	<h2 class="top-auto">Interesse?</h2>
 	<p>Wenn Sie das Interface für Ihre Hochschule ausprobieren möchten, hinterlassen Sie bitte hier Ihre E-Mail-Adresse.</p>
 	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="column" method="post" id="newsletterForm">
@@ -171,8 +172,11 @@
 	  <input type="email" name="newsletter" id="newsletter">
 	  <button>Senden</button>
 	</form>
-	<a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
-	<a href="/impressum" target="_blank">Impressum</a>
+	-->
+      <div class="emptyspace"></div>
+
+      <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
+      <a href="/impressum" target="_blank">Impressum</a>
   </aside>
   
   <main>

@@ -1,11 +1,13 @@
 :root {
-  /* HAWK */
-  --main-bg-color: rgb(35,48,176);
+  /* HAWK
+  --main-bg-color: rgb(35,48,176); */
+  /* Ostfalia */
+  --main-bg-color: rgb(51,83,141);
 }
 
 /* Size of logo on interface page */
 .logo img{
-  width: 150px;
+  width: 100% /*150px*/;
 }
 
 @font-face {
