@@ -267,7 +267,7 @@ li{
   width: 50%;
   opacity: 0.5;
   z-index: -1;
-  background: #d1b8eb;
+  background: rgb(220,220,220); /* HAWK #d1b8eb; */
 }
 .image_preview {
   background-image: url("background_ostfalia.png");
