@@ -4,12 +4,13 @@
     /* HAWK
     --main-bg-color: #2F2ABF; */
     /* Ostfalia */
-    --main-bg-color: rgb(51,83,141);
+    --main-bg-color: rgb(0,58,121);
+    --second-bg-color: rgb(168,168,168);
 }
 
 body{
-  font-family: "Fira Sans", sans-serif;
-  color: #0E0D39;
+  font-family: sans-serif, "Arial";
+  /* color: #0E0D39;*/
 }
 
 
