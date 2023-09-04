@@ -375,17 +375,32 @@ if (!isset($_SESSION['username'])) {
 				// First check if chunk is valid json.
 				// Otherwise we do not see the correct error message.
 				try {
-					JSON.parse(chunk);
-				} catch(error) {
+                    const json = JSON.parse(chunk);
+                    if ("choices" in json) {
+                        // console.log(json["choices"]);
+                        // normal response
+                        document.querySelector(".message:last-child").querySelector(".message-text").innerHTML +=
+                            json["choices"][0]["delta"].content;
+                    } else {
+                        if ("error" in json) {
+                            if ("message" in json.error) {
+                                // console.log(json.error.message);
+                                document.querySelector(".message:last-child").querySelector(".message-text").innerHTML =
+                                    '<em>' + json.error.message + '</em>';
+                            } else {
+                                console.log(json.error);
+                            }
+                        } else {
+                            console.log(json);
+                        }
+                    }
+                } catch(error) {
 					console.log(chunk);
 					console.error(error.message);
 				}
 				// console.log(JSON.parse(chunk)["choices"][0]["delta"]);
-				document.querySelector(".message:last-child").querySelector(".message-text").innerHTML +=  JSON.parse(chunk)["choices"][0]["delta"].content;	
 			})
-			
-			
-			
+
 			scrollToLast();
 		}
 	}
