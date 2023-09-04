@@ -187,7 +187,8 @@
 	<h1>GPT für die Hochschule</h1>
 	<p><small><i>HAWKI</i> ist ein didaktisches Interface für Hochschulen, das auf der API von OpenAI basiert. Für die Nutzerinnen und Nutzer ist es nicht notwendig, einen Account anzulegen, die Hochschul-ID reicht für den Login aus - es werden keine nutzerbezogenen Daten gespeichert.</small></p>
 
-<p>Das Angebot wurde im Interaction Design Lab der HAWK entwickelt, um allen Hochschulangehörigen die Möglichkeit zu geben, Künstliche Intelligenz in ihre Arbeitsprozesse zu integrieren und einen Begegnungsraum zu haben, damit sich eventuell neue Arbeitsweisen ergeben und eine hochschulinterne Diskussion über den Einsatz von K.I. entstehen kann. Derzeit ist die Oberfläche in drei Bereiche unterteilt:</p>
+      <p>Das Angebot wurde im <i>Interaction Design Lab</i> der
+          <i>Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen</i> (HAWK) entwickelt, um allen Hochschulangehörigen die Möglichkeit zu geben, Künstliche Intelligenz in ihre Arbeitsprozesse zu integrieren und einen Begegnungsraum zu haben, damit sich eventuell neue Arbeitsweisen ergeben und eine hochschulinterne Diskussion über den Einsatz von K.I. entstehen kann. Derzeit ist die Oberfläche in drei Bereiche unterteilt:</p>
 
 	<ul>
 	  <li><strong>Konversation</strong>Ein Chatbereich wie bei ChatGPT, für einen schnellen Einstieg in jede beliebige Aufgabe.</li>
@@ -198,14 +199,15 @@
 	</ul>
 	</p>
 	<br>
-    
+
+      <!--
   <div class="video-button" id="openModal">
 	  <svg viewBox="0 0 512 512" title="play-circle">
   <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z" />
 </svg>
 	  <video src="https://ai.hawk.de/hawkistart.mp4" playsinline preload muted loop autoplay></video>
 	</div>
-  
+  -->
 
 
   </main>
