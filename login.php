@@ -188,7 +188,8 @@
 	<p><small><i>HAWKI</i> ist ein didaktisches Interface für Hochschulen, das auf der API von OpenAI basiert. Für die Nutzerinnen und Nutzer ist es nicht notwendig, einen Account anzulegen, die Hochschul-ID reicht für den Login aus - es werden keine nutzerbezogenen Daten gespeichert.</small></p>
 
       <p>Das Angebot wurde im <i>Interaction Design Lab</i> der
-          <i>Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen</i> (HAWK) entwickelt, um allen Hochschulangehörigen die Möglichkeit zu geben, Künstliche Intelligenz in ihre Arbeitsprozesse zu integrieren und einen Begegnungsraum zu haben, damit sich eventuell neue Arbeitsweisen ergeben und eine hochschulinterne Diskussion über den Einsatz von K.I. entstehen kann. Derzeit ist die Oberfläche in drei Bereiche unterteilt:</p>
+          <i>Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen</i> (HAWK)
+          entwickelt, um allen Hochschulangehörigen die Möglichkeit zu geben, Künstliche Intelligenz in ihre Arbeitsprozesse zu integrieren und einen Begegnungsraum zu haben, damit sich eventuell neue Arbeitsweisen ergeben und eine hochschulinterne Diskussion über den Einsatz von K.I. entstehen kann. Derzeit ist die Oberfläche in drei Bereiche unterteilt:</p>
 
 	<ul>
 	  <li><strong>Konversation</strong>Ein Chatbereich wie bei ChatGPT, für einen schnellen Einstieg in jede beliebige Aufgabe.</li>
