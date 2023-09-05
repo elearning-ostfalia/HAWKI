@@ -27,6 +27,20 @@ function handleIntersection(entries) {
   });
 }
 
+function load(element, filename){
+    let messagesElement = document.querySelector("main");
+    fetch(`${filename}`)
+        .then((response) => {
+            return response.text();
+        })
+        .then((html) => {
+            messagesElement.innerHTML = html;
+            return
+        }).then(()=>{
+    });
+}
+
+
 // Create a new Intersection Observer
 var container = document.querySelector('main ul');
 var observer = new IntersectionObserver(handleIntersection);

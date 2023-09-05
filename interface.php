@@ -102,7 +102,7 @@ if (!isset($_SESSION['username'])) {
 	  <!--<a href="#" id="feedback" onclick="load(this, 'userpost.php')">Feedback</a> -->
 	  <a href="logout.php">Abmelden</a>
 	  <br>
-	  <a href="#" onclick="load(this, '../datenschutz/index.php');return false;">Datenschutz</a>
+	  <a href="#" onclick="load(this, '../datenschutz/index.php');return false;">Datenschutzerklärung</a>
 	  <a href="/impressum" target="_blank">Impressum</a>
 	</div>
   </div>
@@ -234,8 +234,6 @@ if (!isset($_SESSION['username'])) {
 	
 	function load(element, filename){
 		let messagesElement = document.querySelector(".messages");
-        const url = `views/${filename}`;
-        console.log(url);
 		fetch(`views/${filename}`)
 		  .then((response) => {
 			return response.text();
