@@ -99,10 +99,10 @@ if (!isset($_SESSION['username'])) {
 	</div>
 	<div class="info">
 	  <a href="#" onclick="load(this, 'about.htm')">Über HAWKI</a>
-	  <a href="#" id="feedback" onclick="load(this, 'userpost.php')">Feedback</a>
+	  <!--<a href="#" id="feedback" onclick="load(this, 'userpost.php')">Feedback</a> -->
 	  <a href="logout.php">Abmelden</a>
 	  <br>
-	  <a href="/datenschutz" target="_blank" >Datenschutz</a>
+	  <a href="#" onclick="load(this, '../datenschutz/index.php');return false;">Datenschutz</a>
 	  <a href="/impressum" target="_blank">Impressum</a>
 	</div>
   </div>
@@ -234,6 +234,8 @@ if (!isset($_SESSION['username'])) {
 	
 	function load(element, filename){
 		let messagesElement = document.querySelector(".messages");
+        const url = `views/${filename}`;
+        console.log(url);
 		fetch(`views/${filename}`)
 		  .then((response) => {
 			return response.text();
