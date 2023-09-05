@@ -28,16 +28,27 @@ function handleIntersection(entries) {
 }
 
 function load(element, filename){
-    let messagesElement = document.querySelector("main");
+    let mainElem = document.querySelector("main");
+    let asideElem = document.querySelector("aside");
+    if (!mainElem || !asideElem) {
+        console.error('main or aside element not found');
+        return;
+    }
     fetch(`${filename}`)
         .then((response) => {
             return response.text();
         })
         .then((html) => {
-            messagesElement.innerHTML = html;
-            return
-        }).then(()=>{
-    });
+            // Create new main element which replaces old main
+            let newMainElem = document.createElement('main');
+            newMainElem.onclick = function() {
+                asideElem.after(mainElem);
+                newMainElem.remove();
+            }
+            newMainElem.innerHTML = html + '<br><a href="#">zurück</a>';
+            asideElem.after(newMainElem);
+            mainElem.remove();
+        });
 }
 
 
