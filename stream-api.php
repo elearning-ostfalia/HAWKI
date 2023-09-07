@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 
 // Set options if not set in php.ini file:
 ini_set('zlib.output_compression',0);
-ini_set('implicit_flush',1);
+ini_set('output_buffering', 'Off');
 
 
 header('Content-Type: text/event-stream');
@@ -47,7 +47,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch, $data) {
 	echo $data;
 	// ob_flush();
-	// flush();
+	flush();
 	return strlen($data);
 });
 
