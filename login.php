@@ -216,13 +216,13 @@
 	<div class="image_preview"></div>
 </div>
 </div>
-
+<!--
 <div id="videoModal" class="modal">
 		<div class="modal-content">
 			<span id="closeModal" class="close">&times;</span>
 			<video src="https://ai.hawk.de/hawkistart.mp4" controls>
 		</div>
-	</div>
+	</div> -->
 <!-- partial -->
   <script  src="./script.js"></script>
   <script>

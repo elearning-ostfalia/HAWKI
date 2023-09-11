@@ -1,3 +1,4 @@
+/*
 document.getElementById('openModal').addEventListener('click', function() {
     document.getElementById('videoModal').style.display = 'block';
     document.querySelector("#videoModal video").play();
@@ -25,7 +26,7 @@ function handleIntersection(entries) {
       button.style.transform = 'translate(200%)';  // Show the button
     }
   });
-}
+}*/
 
 function load(element, filename){
     let mainElem = document.querySelector("main");
@@ -53,12 +54,13 @@ function load(element, filename){
 
 
 // Create a new Intersection Observer
+/*
 var container = document.querySelector('main ul');
 var observer = new IntersectionObserver(handleIntersection);
 
 // Observe the container element
 observer.observe(container);
-
+*/
 /*
 document.getElementById('newsletterForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
