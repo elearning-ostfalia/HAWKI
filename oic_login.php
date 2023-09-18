@@ -23,7 +23,12 @@ if ($testuser) {
     $oidc->setHttpUpgradeInsecureRequests(false);
 }
 
-$oidc->authenticate();
+try {
+    $oidc->authenticate();
+} catch (Exception $ex) {
+    echo 'OpenID connect error: ' . PHP_EOL;
+    echo $ex->getMessage();
+}
 
 $_SESSION['oidcClient'] = $oidc;
 
