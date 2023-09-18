@@ -123,7 +123,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>HAWKI</title>
+  <title>OLAF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -184,7 +184,8 @@
 	 
 	
 	<h1>GPT für die Hochschule</h1>
-	<p><small><i>HAWKI</i> ist ein didaktisches Interface für Hochschulen, das auf der API von OpenAI basiert. Für die Nutzerinnen und Nutzer ist es nicht notwendig, einen Account anzulegen, die Hochschul-ID reicht für den Login aus - es werden keine nutzerbezogenen Daten gespeichert.</small></p>
+	<p><small><i>OLAF</i> (Ostfalia Learning Assistent Framework)
+            ist ein didaktisches Interface für Hochschulen, das auf der API von OpenAI basiert. Für die Nutzerinnen und Nutzer ist es nicht notwendig, einen Account anzulegen, die Hochschul-ID reicht für den Login aus - es werden keine nutzerbezogenen Daten gespeichert.</small></p>
 
       <p>Das Angebot wurde im <i>Interaction Design Lab</i> der
           <i>Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen</i> (HAWK)
