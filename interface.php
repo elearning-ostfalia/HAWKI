@@ -194,7 +194,7 @@ if (!isset($_SESSION['username'])) {
 		 <div class="message">
 			 <div class="message-content">
 			   <div class="message-icon">
-				   KI
+				   Olaf
 			   </div>
 			   <div class="message-text">
 				   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos incidunt, quidem soluta excepturi, ullam enim tempora.
