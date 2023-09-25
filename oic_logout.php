@@ -13,11 +13,10 @@ use Jumbojett\OpenIDConnectClient;
 if(isset($_SESSION['oidcClient'])) {
     // Sign out on IDP Server
     $oidc = unserialize($_SESSION['oidcClient']);
-    if (isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) &&
-        $_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) {
-        $url = 'http://';
-    } else {
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
         $url = 'https://';
+    } else {
+        $url = 'http://';
     }
 
     $url .= $_SERVER['HTTP_HOST'] . '/login.php';
