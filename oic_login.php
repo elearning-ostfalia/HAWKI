@@ -17,6 +17,11 @@ $oidc = new OpenIDConnectClient(
     $env["OIC_CLIENT_SECRET"]
 );
 
+$scope = $env["OIC_SCOPE"];
+if (!empty($scope)) {
+    $oidc->addScope($scope);
+}
+
 # Demo is dealing with HTTP rather than HTTPS
 $testuser = $env["TESTUSER"];
 if ($testuser) {
@@ -30,7 +35,7 @@ try {
     echo $ex->getMessage();
 }
 
-$_SESSION['oidcClient'] = $oidc;
+$_SESSION['oidcClient'] = serialize($oidc);
 
 // Set session variable username
 $firstname = $oidc->requestUserInfo('given_name');
