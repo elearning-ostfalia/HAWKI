@@ -1,1 +1,6 @@
-gepatchte Version, die bei uns am Laufen ist
+Patched version from 
+
+https://github.com/jumbojett/OpenID-Connect-PHP
+
+Original version was not compatible with our environment. 
+
