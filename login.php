@@ -136,12 +136,12 @@
 	<?php
 	  $env = parse_ini_file('.env');
 	  $login_available = false;
-	  if (trim($env["Authentication"]) == "OIC") {
+	  if (trim($env["Authentication"]) == "OIDC") {
 		// Open ID Connect
 		$login_available = true;
-		$oic_login = $env["OIC_LOGIN_BUTTON"]??'Login'; // Option for changing login button
+		$oic_login = $env["OIDC_LOGIN_BUTTON"]??'Login'; // Option for changing login button
 		echo
-		  "<form action='oic_login.php' class='column' method='post'>
+		  "<form action='oidc_login.php' class='column' method='post'>
 			<button>$oic_login</button>
 		  </form>";
 	  }

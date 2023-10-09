@@ -12,12 +12,12 @@ use Jumbojett\OpenIDConnectClient;
 $env = parse_ini_file('.env');
 
 $oidc = new OpenIDConnectClient(
-    $env["OIC_IDP"],
-    $env["OIC_CLIENT_ID"],
-    $env["OIC_CLIENT_SECRET"]
+    $env["OIDC_IDP"],
+    $env["OIDC_CLIENT_ID"],
+    $env["OIDC_CLIENT_SECRET"]
 );
 
-$scope = $env["OIC_SCOPE"];
+$scope = $env["OIDC_SCOPE"];
 if (!empty($scope)) {
     $oidc->addScope($scope);
 }
