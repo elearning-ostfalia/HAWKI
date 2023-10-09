@@ -11,16 +11,18 @@
 	  $password
 	) {
 
-	  $env = parse_ini_file('.env');
-	
+	  if (file_exists(".env")){
+		$env = parse_ini_file('.env');
+	  }	
+
 	  # Hostname des LDAP-Servers
-	  $host = $env["LDAP_HOST"];
+	  $host = isset($env) ? $env["LDAP_HOST"] : getenv("LDAP_HOST");
 	  # Base-DN des LDAP-Baums
-	  $base_dn = $env["LDAP_BASE_DN"];
+	  $base_dn = isset($env) ? $env["LDAP_BASE_DN"] : getenv("LDAP_BASE_DN");
 	  # das dazugehörige Passwort
-	  $bind_pw = $env["LDAP_BIND_PW"];
+	  $bind_pw = isset($env) ? $env["LDAP_BIND_PW"] : getenv("LDAP_BIND_PW");
 	  # Search-DN des LDAP-Baums
-	  $search_dn = $env["LDAP_SEARCH_DN"];
+	  $search_dn = isset($env) ? $env["LDAP_SEARCH_DN"] : getenv("LDAP_SEARCH_DN");
 	  
 
 	  if (empty($username) || empty($password)) {
@@ -76,7 +78,7 @@
 		$initials = substr($parts[1], 0, 1) . substr($parts[0], 0, 1);
 	  } else {
 		if (!isset($userinfo["givenname"]) || !isset($userinfo["sn"])) {
-			print "Fehler: Unerwartete Datenstruktur von LDAP erhalten<br>";
+			echo "Fehler: Unerwartete Datenstruktur von LDAP erhalten";
 			return false;
 		}
 		$firstname = $userinfo["givenname"][0];
@@ -90,9 +92,11 @@
 	  return true;
 	}
 
-	$env = parse_ini_file('.env');
+	if (file_exists(".env")){
+		$env = parse_ini_file('.env');
+	}
 	# Testuser account ist aktiviert 
-	$testuser = $env["TESTUSER"];
+	$testuser = isset($env) ? $env["TESTUSER"] : getenv("TESTUSER");
 
 	if ($testuser && $_POST["account"] == "tester" && $_POST["password"] == "superlangespasswort123") {
 	  // echo "login erfolgreich!";
@@ -134,21 +138,23 @@
     <img src="/img/logo.svg" alt="">
 	<h2>Willkommen zurück!</h2>
 	<?php
-	  $env = parse_ini_file('.env');
+	  if (file_exists(".env")){
+		  $env = parse_ini_file('.env');
+	  }
 	  $login_available = false;
-	  if (trim($env["Authentication"]) == "OIDC") {
-		// Open ID Connect
-		$login_available = true;
-		$oic_login = $env["OIDC_LOGIN_BUTTON"]??'Login'; // Option for changing login button
-		echo
+	  if ((isset($env) ? $env["Authentication"] : getenv("Authentication")) == "OIDC") {
+		  // Open ID Connect
+		  $login_available = true;
+		  $oidc_login = isset($env) ? $env["OIDC_LOGIN_BUTTON"] ??'Login' : getenv("OIDC_LOGIN_BUTTON"); // Option for changing login button
+		  echo
 		  "<form action='oidc_login.php' class='column' method='post'>
-			<button>$oic_login</button>
+			<button>$oidc_login</button>
 		  </form>";
 	  }
-	  if (trim($env["Authentication"]) == "LDAP") {
-		$login_available = true;
-		$server = $_SERVER['PHP_SELF'];
-		$ldap_login = $env["LDAP_LOGIN_BUTTON"]??'Login';
+	  if ((isset($env) ? $env["Authentication"] : getenv("Authentication")) == "LDAP") {
+		  $login_available = true;
+		  $server = $_SERVER['PHP_SELF'];
+		  $ldap_login = isset($env) ? $env["LDAP_LOGIN_BUTTON"] ??'Login' : getenv("LDAP_LOGIN_BUTTON");
 		echo
 		  '<form action = "' . $server . '" class="column" method = "post" >
 			<label for="account" > Benutzername</label >
@@ -206,7 +212,7 @@
 	  <svg viewBox="0 0 512 512" title="play-circle">
   <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z" />
 </svg>
-	  <video src="https://ai.hawk.de/hawkistart.mp4" playsinline preload muted loop autoplay></video>
+	  <video src="hawkistart.mp4" playsinline preload muted loop autoplay></video>
 	</div>
   -->
 
@@ -221,7 +227,7 @@
 <div id="videoModal" class="modal">
 		<div class="modal-content">
 			<span id="closeModal" class="close">&times;</span>
-			<video src="https://ai.hawk.de/hawkistart.mp4" controls>
+			<video src="hawkistart.mp4" controls>
 		</div>
 	</div> -->
 <!-- partial -->

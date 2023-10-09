@@ -8,13 +8,16 @@ require($composerpath . '/vendor/autoload.php');
 
 use Jumbojett\OpenIDConnectClient;
 
+if (file_exists(".env")){
+    $env = parse_ini_file('.env');
+}
+
 // Create OpenID connect client
-$env = parse_ini_file('.env');
 
 $oidc = new OpenIDConnectClient(
-    $env["OIDC_IDP"],
-    $env["OIDC_CLIENT_ID"],
-    $env["OIDC_CLIENT_SECRET"]
+    isset($env) ? $env["OIDC_IDP"] : getenv("OIDC_IDP"),
+    isset($env) ? $env["OIDC_CLIENT_ID"] : getenv("OIDC_CLIENT_ID"),
+    isset($env) ? $env["OIDC_CLIENT_SECRET"] : getenv("OIDC_CLIENT_SECRET")
 );
 
 $scope = $env["OIDC_SCOPE"];
@@ -23,7 +26,7 @@ if (!empty($scope)) {
 }
 
 # Demo is dealing with HTTP rather than HTTPS
-$testuser = $env["TESTUSER"];
+$testuser = isset($env) ? $env["TESTUSER"] : getenv("TESTUSER");
 if ($testuser) {
     $oidc->setHttpUpgradeInsecureRequests(false);
 }
