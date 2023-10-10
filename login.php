@@ -181,7 +181,8 @@
 	-->
       <div class="emptyspace"></div>
 
-      <a href="#" onclick="load(this, '../datenschutz/index.php');return false;">Datenschutzerklärung</a>
+      <!-- show embedded -->
+      <a href="#" onclick="load(this, '/datenschutz');return false;">Datenschutzerklärung</a>
 <!--      <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> -->
       <a href="/impressum" target="_blank">Impressum</a>
   </aside>
