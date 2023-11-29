@@ -190,7 +190,7 @@
 	 
 	
 	<h1>GPT für die Hochschule</h1>
-	<p><small><i>OLAF</i> (Ostfalia Learning Assistent Framework)
+	<p><small><i>OLAF</i> (Ostfalia Learning Assistant Framework)
             ist ein didaktisches Interface für Hochschulen, das auf der API von OpenAI basiert. Für die Nutzerinnen und Nutzer ist es nicht notwendig, einen Account anzulegen, die Hochschul-ID reicht für den Login aus - es werden keine nutzerbezogenen Daten gespeichert.</small></p>
 
       <p>Das Angebot wurde im <i>Interaction Design Lab</i> der
