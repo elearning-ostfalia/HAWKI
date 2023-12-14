@@ -312,7 +312,7 @@ if (!isset($_SESSION['username'])) {
 		document.querySelector('.limitations')?.remove();
 		
 		const requestObject = {};
-		requestObject.model = 'gpt-3.5-turbo-0301';
+		requestObject.model = 'gpt-3.5-turbo-1106';
 		requestObject.stream = true;
 		requestObject.messages = [];
 		const messageElements = messagesElement.querySelectorAll(".message");
