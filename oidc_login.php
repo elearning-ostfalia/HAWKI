@@ -22,7 +22,8 @@ $oidc = new OpenIDConnectClient(
 
 $scope = $env["OIDC_SCOPE"];
 if (!empty($scope)) {
-    $oidc->addScope($scope);
+    $scope_array = array_map('trim', explode(',', $scope));
+    $oidc->addScope($scope_array);
 }
 
 # Demo is dealing with HTTP rather than HTTPS
