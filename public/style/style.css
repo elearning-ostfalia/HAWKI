@@ -75,7 +75,8 @@ button {
 
 /* Size of logo on interface page */
 #HAWK_logo {
-    max-width: 8rem;
+    width: 100%;
+    /*max-width: 8rem;*/
     height: auto;
 }
 
