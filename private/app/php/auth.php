@@ -144,13 +144,13 @@
         // Validate CSRF token on login request
         // Check if csrf tocken from the user is euqal to the session csrf token.
 /*        var_dump($_POST['csrf_token']);
-        var_dump($_SESSION['csrf_token']);
+        var_dump($_SESSION['csrf_token']);*/
         if (!isset($_POST['csrf_token']) || !hash_equals($_POST['csrf_token'], $_SESSION['csrf_token'])) {
             $csrf = generate_csrf_token();
             echo json_encode(array("success" => false, 'csrf_token' => $csrf, "message" => "BAD CSRF..."));
             exit;
         }
-        else{ */
+        else{
             // Authenticate user with submitted credentials
             if (handleLdapLogin($username, $password)) {
                 $csrf = generate_csrf_token();
@@ -161,7 +161,7 @@
                 echo json_encode(array("success" => false, 'csrf_token' => $csrf, "message" => $_SESSION['translation']['LoginFailedMSG']));
                 exit;
             }
-//        }
+        }
     }
  
     
