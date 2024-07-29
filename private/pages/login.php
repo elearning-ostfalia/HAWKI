@@ -47,7 +47,7 @@
 			<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; error_log($_SESSION['csrf_token']);?>">
 		<?php endif; ?>
 		
-		<title>HAWKI</title>
+		<title>OLAF</title>
 
 		<link rel="stylesheet" href="/public/style/style.css">
 		<link rel="stylesheet" href="/public/style/login_style.css">
