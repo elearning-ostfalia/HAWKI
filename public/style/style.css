@@ -1,4 +1,4 @@
-@import url('./gfont-firesans/firesans.css');
+/* @import url('./gfont-firesans/firesans.css'); */
 
 :root {
     --color-transition-duration: 0;
@@ -9,12 +9,13 @@
     --panel-color:#ececec;
     --secondary-panel-color: rgb(255, 253, 248);
     --ai-messageBackground-color: rgb(245, 248, 251);
-    --accent-color: rgb(35, 48, 176);
+    --accent-color: rgb(0,58,121); /* rgb(35, 48, 176); */ /* Ostfalia Change */
     --text-color:rgb(40,40,40); 
     --link-color: rgb(40,40,40);
     --invertText-color:#f6f9fc;
     --invertPanel-color:rgb(40,40,40);
     --buttonText-color: #ffffff;
+    --second-bg-color: rgb(168,168,168); /* Ostfalia new */
 }
 .darkMode{
     --background-color: rgb(25,25,25);
@@ -28,6 +29,7 @@
     --invertText-color:rgb(40,40,40);
     --invertPanel-color:#f6f9fc; 
     --buttonText-color: rgb(40,40,40);
+    --second-bg-color: rgb(168,168,168); /* Ostfalia new */
 }
 
 * {

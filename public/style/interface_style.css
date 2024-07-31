@@ -63,7 +63,8 @@
   grid-template-columns: auto 1fr;
   grid-gap: 0.5rem;
   align-items: center;
-  padding: 0.75rem 1rem 0.75rem;
+  padding: 0.1rem 1rem 0.2rem;  /* Ostfalia Change */
+  /* padding: 0.75rem 1rem 0.75rem; */
   cursor: pointer;
   margin: 0.25rem 0;
   transition: all 0.1s ease;
@@ -104,7 +105,8 @@
 }
 
 .submenu-item {
-  padding: 0.75rem 1rem 0.75rem 0;
+  padding: 0.1rem 1rem 0.2rem;  /* Ostfalia change */
+  /* padding: 0.75rem 1rem 0.75rem 0; */
   cursor: pointer;
   color: var(--text-color);
   opacity: 0.5;
@@ -217,15 +219,15 @@
   width: 3rem;
   height: 3rem;
   border-radius: 100%;
-  background: rgb(35, 48, 176);
-  color: #ffffff;
+  background: var(--accent-color); /*rgb(35, 48, 176);*/ /* Ostfalia Change */
+  color: var(--buttonText-color); /* Ostfalia Change */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .message[data-role="assistant"] .message-icon {
-  background: #726ed5;
+  background: var(--second-bg-color); /* #726ed5; */ /* Ostfalia Change */
   color: #ffffff;
 }
 
