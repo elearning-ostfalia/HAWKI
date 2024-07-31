@@ -24,7 +24,13 @@ if ($testuser) {
 }
 
 $oidc->addScope('profile','email');
-$oidc->authenticate();
+// try {
+    $oidc->authenticate();
+/*} catch (Exception $ex) {
+    echo 'OpenID connect error: ' . PHP_EOL;
+    echo $ex->getMessage();
+    exit();
+}*/
 
 // Set session variable username
 $firstname = $oidc->requestUserInfo('given_name');
@@ -33,7 +39,7 @@ $initials = substr($firstname, 0, 1) . substr($surname, 0, 1);
 #
 $_SESSION['initials'] = $initials;
 
-$_SESSION['username'] = $oidc->requestUserInfo('email');
+$_SESSION['username'] = $initials; // $oidc->requestUserInfo('email');
 
 header("Location: /interface");
 exit();

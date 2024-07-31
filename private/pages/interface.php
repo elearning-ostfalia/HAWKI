@@ -17,6 +17,8 @@
 
 	// IF CSRF IS NOT SET -> user is in Interface without logging in. -> logout to remove variables and set a new session.
 	if (!isset($_SESSION['csrf_token']) || $_SESSION['csrf_token'] === '') {
+		// Ostfalia: When using OIDC the session is gone for some reason...
+		// generate_csrf_token();
 		header("Location: logout");
 		exit;
 	}
