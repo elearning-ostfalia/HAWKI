@@ -75,6 +75,7 @@
 	<!-- TO PREVENT FOUC WHEN RELOADING THE PAGE IN DARK MODE
 		 THE SETTINGS AND IT'S START FUNCTIONS SHOULD BE INCLUDED IN THE HEADER BEFORE THE PAGE IS LOADED -->
 	<?php include VIEWS_PATH . 'settings.php'; ?>
+	<?php include VIEWS_PATH . 'privacy.php'; ?>
   	<script>
 		SwitchDarkMode(false);
 		UpdateSettingsLanguage(`<?php echo $_SESSION['language'] ?>`);
@@ -183,7 +184,8 @@
 			<br>
 			<!-- CHANGE THIS PART TO ONCLICK EVENT TO LOAD THE PAGE IN MESSAGES PANEL.
 				 DON'T FORGET TO ADD A PROPER PAGE IN VIEWS FOLDER. -->
-			<a href="/dataprotection"><?php echo $translation["DataSecurity"]; ?></a>
+<!--			<a href="/dataprotection"><?php echo $translation["DataSecurity"]; ?></a> -->
+			<div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?></div>
 			<a href="/impressum" target="_blank"><?php echo $translation["Impressum"]; ?></a>
 		</div>
 

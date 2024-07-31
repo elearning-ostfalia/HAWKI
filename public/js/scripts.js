@@ -152,6 +152,10 @@ function toggleSettingsPanel(activation){
     }
 }
 
+function togglePrivacyPanel(activation) {
+    document.getElementById('privacy').style.display = activation?'flex':'none';
+}
+
 // Toggle about us in the settings panel.
 function ToggleSettingsContent(content, activation){
     const panel = document.querySelector('.settings-panel');

@@ -52,12 +52,14 @@
 		<link rel="stylesheet" href="/public/style/style.css">
 		<link rel="stylesheet" href="/public/style/login_style.css">
 		<link rel="stylesheet" href="/public/style/settings_style.css">
-		
+		<link rel="stylesheet" href="/public/style/privacy_style.css">
+
 		<script src="/public/js/scripts.js"></script>
 		
 		<!-- TO PREVENT FOUC WHEN RELOADING THE PAGE IN DARK MODE
 			THE SETTINGS AND IT'S START FUNCTIONS SHOULD BE INCLUDED IN THE HEADER BEFORE THE PAGE IS LOADED -->
 		<?php include PRIVATE_PATH . '/views/settings.php'; ?>
+		<?php include PRIVATE_PATH . '/views/privacy.php'; ?>
 		<script>
 			SwitchDarkMode(false);
 			UpdateSettingsLanguage(`<?php echo $_SESSION['language'] ?>`);
@@ -123,7 +125,9 @@
 					</div>
 
 					<div class="impressumPanel">
-						<a href="/dataprotection" target="_blank"><?php echo $translation["dataProtection"]; ?></a>
+<!--						<a href="/dataprotection" target="_blank"><?php echo $translation["dataProtection"]; ?></a> -->
+						<div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?>
+						</div>
 						<a href="/impressum" target="_blank"><?php echo $translation["imprint"]; ?></a>
 					</div>
 				</div>

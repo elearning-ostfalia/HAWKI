@@ -1,3 +1,8 @@
+31.7.2024 ChangeLog Ostfalia:
+
+    - use modal window for privacy information.
+
+
 CHANGE LOG:
 
 16.04.2024 Changelog – HAWKI V1. 
