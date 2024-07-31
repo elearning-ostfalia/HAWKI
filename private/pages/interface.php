@@ -48,6 +48,7 @@
 	<?php endif; ?>
 	<title>OLAF</title>
 
+    <link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
 
 	<link rel="stylesheet" href="/public/style/style.css">
 	<link rel="stylesheet" href="/public/style/interface_style.css">

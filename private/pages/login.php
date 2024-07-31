@@ -49,6 +49,8 @@
 		
 		<title>OLAF</title>
 
+        <link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
+
 		<link rel="stylesheet" href="/public/style/style.css">
 		<link rel="stylesheet" href="/public/style/login_style.css">
 		<link rel="stylesheet" href="/public/style/settings_style.css">
