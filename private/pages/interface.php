@@ -46,7 +46,7 @@
 	<?php if (isset($_SESSION['csrf_token'])) : ?>
 		<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; ?>">
 	<?php endif; ?>
-	<title>HAWKI</title>
+	<title>OLAF</title>
 
 
 	<link rel="stylesheet" href="/public/style/style.css">
@@ -180,7 +180,7 @@
 			</svg>
 		</div>
 		<div class="info">
-			<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a>
+<!--			<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a> -->
 			<a href="logout"><?php echo $translation["SignOut"]; ?></a>
 			<br>
 			<!-- CHANGE THIS PART TO ONCLICK EVENT TO LOAD THE PAGE IN MESSAGES PANEL.
