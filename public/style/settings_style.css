@@ -63,7 +63,7 @@
 .settings-panel::-webkit-scrollbar{
   width: 0;
 }
-.settings-panel.aboutActive, .settings-panel.guidelineActive{
+.settings-panel.aboutActive, .settings-panel.guidelineActive, #privacy .modal-panel{
   width: 50em;
   height: 40em;
 }

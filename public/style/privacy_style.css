@@ -1,8 +1,13 @@
-/* this file contains all style settings for class modal
-   which is already set in interface_style.css
-   for reuse on login page for modal privacy window.
+/*
+  This file is an extract from file interface_style.css.
+  It contains all style settings for class modal
+  for the privacy modal dialog
+  for reuse on login page. Because interface_style.css
+  might contain settings that interfere with login_style.css
+  it is extracted. Otherwise interface_style.css could
+  have been included in logoin.php
 
-   Should have been deleted in interface_style.css!!
+  The extracted code should have been deleted in interface_style.css.
  */
 
 .modal {

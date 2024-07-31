@@ -52,6 +52,7 @@
 	<link rel="stylesheet" href="/public/style/style.css">
 	<link rel="stylesheet" href="/public/style/interface_style.css">
 	<link rel="stylesheet" href="/public/style/settings_style.css">
+	<link rel="stylesheet" href="/public/style/privacy_style.css">
 
 	<!-- COMMON SCRIPTS -->
 	<script src="/public/js/scripts.js"></script>
