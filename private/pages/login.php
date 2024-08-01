@@ -1,4 +1,10 @@
 <?php
+	$testmode = false;
+	if (file_exists(ENV_FILE_PATH)) {
+		$env = parse_ini_file(ENV_FILE_PATH);
+		$testmode = ($env['TESTMODE'] === "1");
+	}
+
 	// Secure session (optional, depends on the application's specific needs)
 	ini_set('session.cookie_httponly', 1);
 	ini_set('session.use_only_cookies', 1);
@@ -6,10 +12,9 @@
 		ini_set('session.cookie_secure', 1);
 	}
 	session_set_cookie_params([
-		'secure' => true,     // cookies are sent over secure connections only
-		'httponly' => true,   // cookies are accessible only through the HTTP protocol
+		'secure' => !$testmode, // cookies are sent over secure connections only
+		'httponly' => true,     // cookies are accessible only through the HTTP protocol
 	]);
-
 	session_start();
 
 	require_once BOOTSTRAP_PATH;
