@@ -47,12 +47,14 @@
 	<?php if (isset($_SESSION['csrf_token'])) : ?>
 		<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; ?>">
 	<?php endif; ?>
-	<title>HAWKI</title>
+	<title>OLAF</title>
 
+	<link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
 
-	<link rel="stylesheet" href="public/style/style.css">
-	<link rel="stylesheet" href="public/style/interface_style.css">
-	<link rel="stylesheet" href="public/style/settings_style.css">
+	<link rel="stylesheet" href="/public/style/style.css">
+	<link rel="stylesheet" href="/public/style/interface_style.css">
+	<link rel="stylesheet" href="/public/style/settings_style.css">
+	<link rel="stylesheet" href="/public/style/privacy_style.css">
 
 	<!-- COMMON SCRIPTS -->
 	<script src="public/js/scripts.js"></script>
@@ -79,6 +81,7 @@
 	<!-- TO PREVENT FOUC WHEN RELOADING THE PAGE IN DARK MODE
 		 THE SETTINGS AND IT'S START FUNCTIONS SHOULD BE INCLUDED IN THE HEADER BEFORE THE PAGE IS LOADED -->
 	<?php include VIEWS_PATH . 'settings.php'; ?>
+	<?php include VIEWS_PATH . 'privacy.php'; ?>
   	<script>
 		SwitchDarkMode(false);
 		UpdateSettingsLanguage(`<?php echo $_SESSION['language'] ?>`);
@@ -184,12 +187,15 @@
 					</svg>
 				</div>
 				<div class="info">
-					<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a>
+<!--					<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a> -->
 					<a href="logout"><?php echo $translation["SignOut"]; ?></a>
 					<br>
 					<!-- CHANGE THIS PART TO ONCLICK EVENT TO LOAD THE PAGE IN MESSAGES PANEL.
 						DON'T FORGET TO ADD A PROPER PAGE IN VIEWS FOLDER. -->
-					<a href="dataprotection"><?php echo $translation["DataSecurity"]; ?></a>
+<!--					<a href="dataprotection"><?php echo $translation["DataSecurity"]; ?></a> -->
+                    <div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?>
+                    </div>
+
 					<a href="impressum" target="_blank"><?php echo $translation["Impressum"]; ?></a>
 				</div>
 
@@ -207,7 +213,7 @@
 
 					<div class="input-controlbar">
 						<?php 
-							if(isset($env) ? $env["MODEL_SELECTOR_ACTIVATION"] : getenv("MODEL_SELECTOR_ACTIVATION") && $env["MODEL_SELECTOR_ACTIVATION"] === "true"){
+							if(isset($env) and isset($env["MODEL_SELECTOR_ACTIVATION"]) and $env["MODEL_SELECTOR_ACTIVATION"] === "true") {
 								echo					
 									'<select id="model-selector" onchange="OnDropdownModelSelection()">
 										<option value="gpt-4o">OpenAI GPT-4o</option>

@@ -34,6 +34,7 @@
                         <a class="language-btn" onclick="changeLanguage('en_US')" id="en_US_btn">
                             EN
                         </a>
+<!--
                         <a class="language-btn" onclick="changeLanguage('es_ES')" id="es_ES_btn">
                             ES
                         </a>
@@ -43,9 +44,9 @@
                         <a class="language-btn" onclick="changeLanguage('it_IT')" id="it_IT_btn">
                             IT
                         </a>
+-->
                     </div>
                 </div>
-                
                 <div class="settings-section">
                     <h3><?php echo $translation["theme"]; ?></h3>
                     <div class="darkMode-switch-panel">

@@ -1,0 +1,101 @@
+/*
+  This file is an extract from file interface_style.css.
+  It contains all style settings for class modal
+  for the privacy modal dialog
+  for reuse on login page. Because interface_style.css
+  might contain settings that interfere with login_style.css
+  it is extracted. Otherwise interface_style.css could
+  have been included in logoin.php
+
+  The extracted code should have been deleted in interface_style.css.
+ */
+
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: var(--text-color);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+}
+.modal-panel{
+  margin: auto;
+  min-width: 25em;
+  max-width: 90vw;
+  width: 40em;
+  background-color: var(--secondary-panel-color);
+  border-radius: 1.5rem;
+  box-shadow: 1px 1px 5px rgba(0.1, 0.1, 0.1, 0.2);
+  position: relative;
+  transition: 500ms;
+  transition-property: width, height;
+  overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.modal-content-wrapper{
+  direction: rtl;
+  overflow-y: scroll;
+  margin-left: 4px;
+  height: 100%;
+}
+.modal-content-wrapper::-webkit-scrollbar {
+  width: 7px;
+  height: 5rem;
+}
+
+.modal-content-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+.modal-content-wrapper::-webkit-scrollbar-thumb {
+  background: #cbcbcb;
+  border-radius: 5px;
+}
+
+.modal-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.modal-content {
+  /* max-width: 60ch; */
+  margin-right: 1px;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  direction: ltr;
+}
+
+@media only screen
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+   {
+    .modal-panel{
+      margin: auto;
+      min-width: 0;
+      max-width: 90vw;
+      height: max-content;
+      max-height: 80%;  
+
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+}

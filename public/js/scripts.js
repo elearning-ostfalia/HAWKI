@@ -102,6 +102,7 @@ function SwitchDarkMode(isSet){
     darkMode = localStorage.getItem("darkMode");
 
     if(darkMode === 'enabled'){
+        document.getElementById('HAWK_logo').src = "/public/img/logo-dark-mode.svg";
         document.documentElement.className = 'darkMode';
         icon.setAttribute('src', 'public/img/moon.svg');
         if(hljsTheme != null) hljsTheme.setAttribute('href', "public/style/hljsDark.css");
@@ -113,6 +114,7 @@ function SwitchDarkMode(isSet){
         tog.classList.add('active');
     }
     else{
+        document.getElementById('HAWK_logo').src = "/public/img/logo.svg";
         document.documentElement.className = 'lightMode';
         icon.setAttribute('src', 'public/img/sun.svg');
         if(hljsTheme != null) hljsTheme.setAttribute('href', "public/style/hljsLight.css");
@@ -148,6 +150,10 @@ function toggleSettingsPanel(activation){
         ToggleSettingsContent('guideline', false);
 
     }
+}
+
+function togglePrivacyPanel(activation) {
+    document.getElementById('privacy').style.display = activation?'flex':'none';
 }
 
 // Toggle about us in the settings panel.

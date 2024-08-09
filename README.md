@@ -39,10 +39,7 @@ Display of mathematical formulas, LaTex and improvement of syntax highlighting.
 
 Dark Mode for our night owls.
 
-System prompts can now be viewed and edited.
-
-In the new version each room's chatlog is saved by default and should be deleted before starting a new chat.
-
+System prompts can now be viewed transparently.
 
 ### Security updates
 
@@ -75,37 +72,37 @@ The new version also supports the Shibboleth for user authentication. Define you
 
 To generate answers HAWKI uses the Open AI api. Follow the instructions on https://platform.openai.com/docs/introduction to generate an API key and paste it in the configuration file like instructed in chapter [Configuration](#configuration).
 
-
 ## Configuration
 
 To get started you need to add a configuration file to the project first. Copy the file ".env.example" from the root directory and rename it to ".env". Replace the example values in it with your own configuration. A detailed description of all values is listed below.
 
-| Value            | Type    | Example                                | Description                                                                                                                                        |
-| ---------------- | ------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Authentication   | string  | 'LDAP' / 'OIDC' / 'Shibboleth'                     | Authentication method: LDAP or OpenID Connect                                                                                                      |
-| LDAP_HOST        | string  | "ldaps://...de"                        | The URL of your LDAP server.                                                                                                                       |
-| LDAP_BIND_PW     | string  | secretpassword                         | Password of the user that is trying to bind to the LDAP Server.                                                                                    |
-| LDAP_BASE_DN     | string  | "cn=...,ou=...,dc=..."                 | Distinguised name that is used to initially bind to your LDAP server.                                                                              |
-| LDAP_SEARCH_DN   | string  | "ou=...,dc=..."                        | Distinguished name that is used for authenticating users.                                                                                          |
-| LDAP_PORT  | string  | "..."                        | The LDAP port.                                                                                          |
-| LDAP_FILTER  | string  | "..."  | LDAP Filter. Choose the filter based on your LDAP configuration. See .env.example for more details.|
-| SHIBBOLET_LOGIN_PATH    | string  | "..."                                  | Path to shibboleth login page.                                                                                               |
-| SHIBBOLET_LOGIN_PAGE    | string  | "..."                                  | Shibboleth login page.                                                                                               |
-| OIDC_IDP          | string  | "https://...."                         | URL of the Identity provider supporting OpenID Connect.                                                                                            |
-| OIDC_CLIENT_ID    | string  | "..."                                  | Client Id for this application in Identity provider.                                                                                               |
-| OIDC_CLIENT_SECRET | string  | "..."                                 | Secret key for OpenID Connect. 
-| OIDC_LOGOUT_URI | string  | "https://...."                                 | URL to logout from Identity provider                                                                                                                  |
+| Value                | Type    | Example                                      | Description                                                                                                                                                                                                                             |
+|----------------------| ------- |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authentication       | string  | 'LDAP' / 'OIDC' / 'Shibboleth'               | Authentication method: LDAP or OpenID Connect                                                                                                                                                                                           |
+| LDAP_HOST            | string  | "ldaps://...de"                              | The URL of your LDAP server.                                                                                                                                                                                                            |
+| LDAP_BIND_PW         | string  | secretpassword                               | Password of the user that is trying to bind to the LDAP Server.                                                                                                                                                                         |
+| LDAP_BASE_DN         | string  | "cn=...,ou=...,dc=..."                       | Distinguised name that is used to initially bind to your LDAP server.                                                                                                                                                                   |
+| LDAP_SEARCH_DN       | string  | "ou=...,dc=..."                              | Distinguished name that is used for authenticating users.                                                                                                                                                                               |
+| LDAP_PORT            | string  | "..."                                        | The LDAP port.                                                                                                                                                                                                                          |
+| LDAP_FILTER          | string  | "..."                                        | LDAP Filter. Choose the filter based on your LDAP configuration. See .env.example for more details.                                                                                                                                     |
+| SHIBBOLET_LOGIN_PATH | string  | "..."                                        | Path to shibboleth login page.                                                                                                                                                                                                          |
+| SHIBBOLET_LOGIN_PAGE | string  | "..."                                        | Shibboleth login page.                                                                                                                                                                                                                  |
+| OIDC_IDP             | string  | "https://...."                               | URL of the Identity provider supporting OpenID Connect.                                                                                                                                                                                 |
+| OIDC_CLIENT_ID       | string  | "..."                                        | Client Id for this application in Identity provider.                                                                                                                                                                                    |
+| OIDC_CLIENT_SECRET   | string  | "..."                                        | Secret key for OpenID Connect.                                                                                                                                                                                                          
+| OIDC_LOGOUT_URI      | string  | "https://...."                               | URL to logout from Identity provider                                                                                                                                                                                                    |
 | MODEL_SELECTOR_ACTIVATION   | string  | "true" | Set to true to activate dropdown. Deactivated Dropdown will force Gpt-4-0 as default model.                                                                                                                                    |
 | OPENAI_API_URL   | string  | "https://api.openai.com/v1/chat/completions" | Open AI Endpoint URL                                                                                                                                    |
-| OPENAI_API_KEY   | string  | sk-...                                 | Open AI Api key                                                                                                                                    |
+| OPENAI_API_KEY       | string  | sk-...                                       | Open AI Api key                                                                                                                                                                                                                         |
 | GWDG_API_URL   | string  | "https://api.openai.com/v1/chat/completions" | GWDG Endpoint URL                                                                                                                                    |
 | GWDG_API_KEY   | string  |                                 | GWDG Api key                                                                                                                                     |
-| IMPRINT_LOCATION | string  | https://your-university/imprint        | A link to your imprint. Alternatively you can replace the file index.php under /impressum with your own html/ php of your imprint.                 |
-| PRIVACY_LOCATION | string  | https://your-university/privacy-policy | A link to your privacy policy. Alternatively you can replace the file index.php under /datenschutz with your own html/ php of your privacy policy. |
-| TESTUSER         | string | "tester"                                | Set value for testing purposes. Leave TESTUSER and TESTPASSWORD empty or comment them out to disable test user.                    |
-| TESTPASSWORD         | string | "superlangespasswort123"  | Set value for testing purposes. Leave TESTUSER and TESTPASSWORD empty or comment them out to disable test user.                           |
-| FAVICON_URI  | string  | "https://...."                                 | Link to favicon |
-| DEFAULT_LANGUAGE  | string  | "de_DE"/ "en_US"/ "es_ES"/ "fr_FR"/ "it_IT"               | Default website language. Only applicable if the user has not previously changed the language or their browser language is not one of the supported languages. Current supported languages: 'de_DE', 'en_US', 'es_ES', 'fr_FR', 'it_IT'  |
+| IMPRINT_LOCATION     | string  | https://your-university/imprint              | A link to your imprint. Alternatively you can replace the file index.php under /impressum with your own html/ php of your imprint.                                                                                                      |
+| PRIVACY_LOCATION     | string  | https://your-university/privacy-policy       | A link to your privacy policy. Alternatively you can replace the file index.php under /datenschutz with your own html/ php of your privacy policy.                                                                                      |
+| TESTUSER             | string | "tester"                                     | Set value for testing purposes. Leave TESTUSER and TESTPASSWORD empty or comment them out to disable test user.                                                                                                                         |
+| TESTPASSWORD         | string | "superlangespasswort123"                     | Set value for testing purposes. Leave TESTUSER and TESTPASSWORD empty or comment them out to disable test user.                                                                                                                         |
+| TESTMODE             | string | "0"                                          | Set value for testing purposes without https (only http).                                                                                                                                                                               |
+| FAVICON_URI          | string  | "https://...."                               | Link to favicon                                                                                                                                                                                                                         |
+| DEFAULT_LANGUAGE     | string  | "de_DE"/ "en_US"/ "es_ES"/ "fr_FR"/ "it_IT"  | Default website language. Only applicable if the user has not previously changed the language or their browser language is not one of the supported languages. Current supported languages: 'de_DE', 'en_US', 'es_ES', 'fr_FR', 'it_IT' |
 | CHATLOG_ENCRYPTION_SALT | string | ... | Set a strong salt specific to your application. This will be user to encrypt users' chatlogs in localstorage.|
 ## Web Server Configuration
 

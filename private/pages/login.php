@@ -1,4 +1,10 @@
 <?php
+	$testmode = false;
+	if (file_exists(ENV_FILE_PATH)) {
+		$env = parse_ini_file(ENV_FILE_PATH);
+		$testmode = ($env['TESTMODE'] === "1");
+	}
+
 	// Secure session (optional, depends on the application's specific needs)
 	ini_set('session.cookie_httponly', 1);
 	ini_set('session.use_only_cookies', 1);
@@ -6,10 +12,9 @@
 		ini_set('session.cookie_secure', 1);
 	}
 	session_set_cookie_params([
-		'secure' => true,     // cookies are sent over secure connections only
-		'httponly' => true,   // cookies are accessible only through the HTTP protocol
+		'secure' => !$testmode, // cookies are sent over secure connections only
+		'httponly' => true,     // cookies are accessible only through the HTTP protocol
 	]);
-
 	session_start();
 
 	require_once BOOTSTRAP_PATH;
@@ -46,17 +51,21 @@
 			<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; error_log($_SESSION['csrf_token']);?>">
 		<?php endif; ?>
 		
-		<title>HAWKI</title>
+		<title>OLAF</title>
+
+        <link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
 
 		<link rel="stylesheet" href="public/style/style.css">
 		<link rel="stylesheet" href="public/style/login_style.css">
 		<link rel="stylesheet" href="public/style/settings_style.css">
-		
+        <link rel="stylesheet" href="public/style/privacy_style.css">
+
 		<script src="public/js/scripts.js"></script>
-		
+
 		<!-- TO PREVENT FOUC WHEN RELOADING THE PAGE IN DARK MODE
 			THE SETTINGS AND IT'S START FUNCTIONS SHOULD BE INCLUDED IN THE HEADER BEFORE THE PAGE IS LOADED -->
 		<?php include PRIVATE_PATH . '/views/settings.php'; ?>
+		<?php include PRIVATE_PATH . '/views/privacy.php'; ?>
 		<script>
 			SwitchDarkMode(false);
 			UpdateSettingsLanguage(`<?php echo $_SESSION['language'] ?>`);
@@ -122,8 +131,10 @@
 					</div>
 
 					<div class="impressumPanel">
-						<a href="dataprotection" target="_blank"><?php echo $translation["dataProtection"]; ?></a>
-						<a href="impressum" target="_blank"><?php echo $translation["imprint"]; ?></a>
+<!--						<a href="/dataprotection" target="_blank"><?php echo $translation["dataProtection"]; ?></a> -->
+						<div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?>
+                        </div>
+                        <a href="impressum" target="_blank"><?php echo $translation["imprint"]; ?></a>
 					</div>
 				</div>
 			</div>
@@ -134,9 +145,11 @@
 							<?php echo $translation['infoPanel_Content']; ?>
 						</div>
 					</div>
+<!--
 					<form class="submitButtonPanel" target="_blank" action="https://elearning.hawk.de/de/ki-studium-und-lehre">
 						<button type="submit"><?php echo $translation["aiOverviewPage"]; ?></button>
 					</form>
+-->
 				</div>
 				<div class="backgroundImageContainer">
 					<video class="image_preview_container" src="public/img/HAWKIBG.m4v" type="video/m4v" preload = "none" autoplay loop muted></video>
