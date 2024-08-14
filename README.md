@@ -108,11 +108,14 @@ To get started you need to add a configuration file to the project first. Copy t
 
 There are a few things to keep in mind when publishing your HAWKI instance on a webserver.
 
-First and foremost your webserver needs PHP support.
+First and foremost your webserver needs PHP support. 
+
 
 Also, make sure that you disable `output_buffering` in your webserver configuration otherwise you might run into issues when receiving the repsonse stream from Open AI.
 
 If you are setting up a new server, make sure that you install the cURL library. https://www.php.net/manual/de/book.curl.php
+Apache needs rewrite and headers support enabled.
+
 
 **_IMPORTANT:_** _Keep the `.env` configuration file secret. Make sure your webserver does not allow directory listing and it blocks access to this configuration file. By default the `.env` file is located in the private folder with restricted access on apache. Double check that it can not be queried with a simple GET request via http://your-hawki-domain/private/.env_
 
