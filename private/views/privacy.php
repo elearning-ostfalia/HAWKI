@@ -59,16 +59,19 @@
 
                 <h1>Zugriffsdaten/Server-Log-Files</h1>
 
-                Aus technischen Gründen erheben und speichern wir automatisch Informationen in sogenannten
-                Server-Log Files, die Ihr Browser automatisch an uns übermittelt. Wir verarbeiten diese personenbezogenen
+                Aus technischen Gründen erheben und speichern wir Informationen,
+                die Ihr Browser automatisch an uns übermittelt, in sogenannten
+                Server-Log Files. Bei diesen Informationen handelt es sich um Ihre IP-Adresse, den Zeitpunkt der Anfrage und
+                Angaben zum Browser. Diese Daten werden nach sieben Tagen gelöscht.
+                Wir verarbeiten diese personenbezogenen
                 Daten grundsätzlich nur, soweit dies zur Bereitstellung einer technisch funktionsfähigen Website
                 erforderlich ist.
 
                 <h1>Zugangsdaten/Login</h1>
 
                 Die von Ihnen eingegebenen Zugangsdaten dienen lediglich der Überprüfung, ob Sie zugangsberechtigt
-                sind. Ihre Daten werden nicht gespeichert, sondern direkt an das Identitätsmanagement weitergeleitet,
-                das eine Prüfung vornimmt.
+                sind. Ihre Zugangsdaten werden nicht gespeichert, sondern direkt an das Identitätsmanagement weitergeleitet,
+                das eine Prüfung vornimmt.<br>
 
                 <h1>Session Cookies</h1>
 
@@ -80,7 +83,24 @@
                 ist für die Funktion unserer Webseite notwendig, damit Ihr Browser auch nach einem
                 Seitenwechsel wiedererkannt wird. Es wird automatisch gelöscht, wenn Sie sich von der Anwendung
                 abmelden oder den Browser schließen. Session Cookies werden nicht zur Erstellung von Nutzerprofilen
-                verwendet.
+                verwendet.<br>
+
+                Während der Session werden lediglich Ihre Initialen, Ihre E-Mail-Adresse sowie die von Ihnen
+                ausgewählte Sprache auf dem Server gespeichert, um z.B. die angezeigten Seiten generieren.
+
+                <h1>Anfragen an KI-Modelle</h1>
+
+                Im Rahmen der Nutzung der KI-Modelle von OpenAI werden Ihre Eingaben (Prompts) an OpenAI Inc. weitergeleitet (API),
+                um die angeforderten Textgenerierungen zu ermöglichen.<br>
+                Bei der Nutzung aller anderen Modelle werden Ihre Daten an die GWDG in Göttingen weitergeleitet
+                und dort lokal verarbeitet, um die Textgenerierung zu ermöglichen. <br>
+                Die Hochschule speichert selbst keine Inhalte Ihrer Eingaben.<br>
+
+                OpenAI Inc. bzw. die GWDG agieren als Auftragsverarbeiter
+                und verarbeitet Ihre Daten gemäß den Vorgaben der DSGVO.
+                Insbesondere werden Ihre Daten von OpenAI nicht für das Training von KI-Modellen verwendet.<br>
+                Die Weiterleitung der Daten erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO oder
+                zur Erfüllung unserer berechtigten Interessen gemäß Art. 6 Abs. 1 lit. f DSGVO.
 
                 <h1>Ihre Rechte</h1>
 
