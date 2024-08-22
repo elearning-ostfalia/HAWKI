@@ -88,7 +88,7 @@
                 Während der Session werden lediglich Ihre Initialen, Ihre E-Mail-Adresse sowie die von Ihnen
                 ausgewählte Sprache auf dem Server gespeichert, um z.B. die angezeigten Seiten generieren.
 
-                <h1>Anfragen an KI-Modelle</h1>
+                <h1>KI-Aufforderungen</h1>
 
                 Im Rahmen der Nutzung der KI-Modelle von OpenAI werden Ihre Eingaben (Prompts) an OpenAI Inc. weitergeleitet (API),
                 um die angeforderten Textgenerierungen zu ermöglichen.<br>
