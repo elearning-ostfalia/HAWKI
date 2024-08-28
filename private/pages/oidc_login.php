@@ -23,7 +23,15 @@ if ($testuser) {
     $oidc->setHttpUpgradeInsecureRequests(false);
 }
 
-$oidc->addScope(['profile','email']);
+$scope = $env["OIDC_SCOPE"];
+if (!empty($scope)) {
+    $scope_array = array_map('trim', explode(',', $scope));
+    $oidc->addScope($scope_array);
+} else {
+    $oidc->addScope(['profile','email']);
+}
+
+
 // try {
     $oidc->authenticate();
 /*} catch (Exception $ex) {
