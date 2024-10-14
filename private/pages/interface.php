@@ -1,4 +1,6 @@
 <?php
+    define('GPT_AI_MODEL', 'gpt-4o');
+
 	session_start();
 
 	require_once BOOTSTRAP_PATH;
@@ -216,7 +218,7 @@
 							if(isset($env) and isset($env["MODEL_SELECTOR_ACTIVATION"]) and $env["MODEL_SELECTOR_ACTIVATION"] === "true") {
 								echo					
 									'<select id="model-selector" onchange="OnDropdownModelSelection()">
-										<option value="gpt-4o">OpenAI GPT-4o</option>
+										<option value=GPT_AI_MODEL>OpenAI GPT-4o</option>
 										<option value="meta-llama-3.1-8b-instruct">meta-llama-3.1-8b-instruct</option>
 										<option value="meta-llama-3.1-70b-instruct">meta-llama-3.1-70b-instruct</option>
 										<option value="llama-3-sauerkrautlm-70b-instruct">Llama 3 70B Sauerkraut</option>
@@ -390,14 +392,14 @@
 
 
 
-	let activeModel = "gpt-4o";
+	let activeModel = GPT_AI_MODEL;
 	let streamAPI = "";
 	window.addEventListener('DOMContentLoaded', (event) => {
 		if(localStorage.getItem("definedModel")){
 			SwitchModel(localStorage.getItem("definedModel"));
 		}
 		else{
-			SwitchModel("gpt-4o");
+			SwitchModel(GPT_AI_MODEL);
 		}
 		document.getElementById("model-selector").value = activeModel;
     });
@@ -411,7 +413,7 @@
 	function SwitchModel(model){
 		activeModel = model;
 		switch(activeModel){
-			case('gpt-4o'):
+			case(GPT_AI_MODEL):
 				streamAPI = "api/stream-api";
 				break;
 
