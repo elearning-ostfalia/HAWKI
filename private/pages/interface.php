@@ -1,5 +1,5 @@
 <?php
-    define('GPT_AI_MODEL', 'gpt-4o');
+    define('GPT_AI_MODEL', 'gpt-4o-mini');
 
 	session_start();
 
@@ -49,9 +49,11 @@
 	<?php if (isset($_SESSION['csrf_token'])) : ?>
 		<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; ?>">
 	<?php endif; ?>
+
 	<title>OLAF</title>
 
 	<link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
+
 
 	<link rel="stylesheet" href="/public/style/style.css">
 	<link rel="stylesheet" href="/public/style/interface_style.css">
@@ -189,12 +191,13 @@
 					</svg>
 				</div>
 				<div class="info">
-<!--					<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a> -->
+					<a href="#" id="feedback" onclick="load(this, 'feedback_loader.php')"><?php echo $translation["FeedBack"]; ?></a>
+
 					<a href="logout"><?php echo $translation["SignOut"]; ?></a>
 					<br>
 					<!-- CHANGE THIS PART TO ONCLICK EVENT TO LOAD THE PAGE IN MESSAGES PANEL.
 						DON'T FORGET TO ADD A PROPER PAGE IN VIEWS FOLDER. -->
-<!--					<a href="dataprotection"><?php echo $translation["DataSecurity"]; ?></a> -->
+
                     <div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?>
                     </div>
 
@@ -215,15 +218,17 @@
 
 					<div class="input-controlbar">
 						<?php 
-							if(isset($env) and isset($env["MODEL_SELECTOR_ACTIVATION"]) and $env["MODEL_SELECTOR_ACTIVATION"] === "true") {
+							if(isset($env) and isset($env["MODEL_SELECTOR_ACTIVATION"]) and $env["MODEL_SELECTOR_ACTIVATION"] === "true") { <-- merge??? -->
 								echo					
 									'<select id="model-selector" onchange="OnDropdownModelSelection()">
 										<option value="' . GPT_AI_MODEL . '">OpenAI ' . GPT_AI_MODEL . '</option>
+<!-- <option value="gpt-4o-mini">OpenAI GPT-4o Mini</option> -->
+										
 										<option value="meta-llama-3.1-8b-instruct">meta-llama-3.1-8b-instruct</option>
 										<option value="meta-llama-3.1-70b-instruct">meta-llama-3.1-70b-instruct</option>
 										<option value="llama-3-sauerkrautlm-70b-instruct">Llama 3 70B Sauerkraut</option>
-										<option value="mixtral-8x7b-instruct">Mixtral-8x7b-instruct</option>
-										<option value="qwen2-72b-instruct">Qwen 2 72B Instruct</option>
+										<option value="mistral-large-instruct">Mistral Large Instruct</option>
+										<option value="qwen2.5-72b-instruct">Qwen 2.5 72B Instruct</option>
 									</select>';
 							}
 							else{
@@ -414,14 +419,15 @@
 		activeModel = model;
 		switch(activeModel){
 			case('<?php echo GPT_AI_MODEL ?>'):
+
 				streamAPI = "api/stream-api";
 				break;
 
 			case('meta-llama-3.1-8b-instruct'):
 			case('meta-llama-3.1-70b-instruct'):
 			case('llama-3-sauerkrautlm-70b-instruct'):
-			case('mixtral-8x7b-instruct'):
-			case('qwen2-72b-instruct'):
+			case('mistral-large-instruct'):
+			case('qwen2.5-72b-instruct'):
 				streamAPI = 'api/GWDG-api';
 				break;
 		}
@@ -490,6 +496,11 @@
 		messageElements.forEach(messageElement => {
 			let messageObject = {};
 			messageObject.role = messageElement.dataset.role;
+			
+			if(activeModel === 'mistral-large-instruct' && messageObject.role === 'system'){
+				messageObject.role = 'user';
+			}
+
 			messageObject.content = messageElement.querySelector(".message-text").textContent;
 			requestObject.messages.push(messageObject);
 		})
@@ -583,17 +594,17 @@
 
 				let chunks = decodedData.split("data: ");
 				chunks.forEach((chunk, index) => {
-
+					
+					if(chunk.length == 0) return false;
 					if(!isJSON(chunk)){
 						return;
 					}
-					if(chunk.indexOf('finish_reason":"stop"') > 0) return false;
-					if(chunk.indexOf('DONE') > 0) return false;
-					if(chunk.indexOf('role') > 0) return false;
-					if(chunk.length == 0) return false;
+					const jsonChunk = JSON.parse(chunk);
+					if(jsonChunk["choices"][0]["finish_reason"] != null) return false;
 					
-					rawMsg += JSON.parse(chunk)["choices"][0]["delta"].content;
-					document.querySelector(".message:last-child").querySelector(".message-text").innerHTML =  FormatChunk(JSON.parse(chunk)["choices"][0]["delta"].content);
+
+					rawMsg += jsonChunk["choices"][0]["delta"].content;
+					document.querySelector(".message:last-child").querySelector(".message-text").innerHTML =  FormatChunk(jsonChunk["choices"][0]["delta"].content);
 
 				})
 
@@ -729,6 +740,30 @@
 				const textNode = document.createTextNode(plainTextTable);
 				table.parentNode.replaceChild(textNode, table);
 			});
+
+			// Remove code language from copy content
+			if(clone.tagName === "CODE") {
+				const firstChildNode = clone.firstChild;
+				const lastChildNode = clone.lastChild;
+
+				if(firstChildNode && firstChildNode.nodeName === "#text") {
+					// Remove the first node, as it contains the code language
+					// It is possible that the code language is followed by actual code, so check for that
+					if(firstChildNode.textContent.includes("\n")) {
+						firstChildNode.textContent = firstChildNode.textContent.split("\n")[1];
+					} else {
+						clone.removeChild(firstChildNode);
+					}
+				}
+
+				if (lastChildNode && lastChildNode.nodeName === "#text") {
+					// In some cases, there might be markdown content at the end of the code block due to formatting errors
+					const re = "\n?```"
+					if(lastChildNode.textContent.match(re)) {
+						lastChildNode.textContent = lastChildNode.textContent.replace("\n```", "");
+					}
+				}
+			}
 
 
 		// Get the text content of the modified clone

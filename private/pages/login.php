@@ -14,8 +14,7 @@
 	session_set_cookie_params([
 		'secure' => !$testmode, // cookies are sent over secure connections only
 		'httponly' => true,     // cookies are accessible only through the HTTP protocol
-	]);
-	session_start();
+	]);	session_start();
 
 	require_once BOOTSTRAP_PATH;
 	require_once LIBRARY_PATH . 'csrf.php';
@@ -51,6 +50,7 @@
 			<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; error_log($_SESSION['csrf_token']);?>">
 		<?php endif; ?>
 		
+
 		<title>OLAF</title>
 
         <link rel="shortcut icon" href="/public/img/Ostfalia_Logo.svg" type="image/svg">
@@ -58,9 +58,11 @@
 		<link rel="stylesheet" href="public/style/style.css">
 		<link rel="stylesheet" href="public/style/login_style.css">
 		<link rel="stylesheet" href="public/style/settings_style.css">
+
         <link rel="stylesheet" href="public/style/privacy_style.css">
 
 		<script src="public/js/scripts.js"></script>
+
 
 		<!-- TO PREVENT FOUC WHEN RELOADING THE PAGE IN DARK MODE
 			THE SETTINGS AND IT'S START FUNCTIONS SHOULD BE INCLUDED IN THE HEADER BEFORE THE PAGE IS LOADED -->
@@ -131,10 +133,6 @@
 					</div>
 
 					<div class="impressumPanel">
-<!--						<a href="/dataprotection" target="_blank"><?php echo $translation["dataProtection"]; ?></a> -->
-						<div class="settings-btn" onclick="togglePrivacyPanel(true)"><?php echo $translation["dataProtection"]; ?>
-                        </div>
-                        <a href="impressum" target="_blank"><?php echo $translation["imprint"]; ?></a>
 					</div>
 				</div>
 			</div>
