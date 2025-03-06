@@ -23,7 +23,7 @@ services:
         restart: true
 
     build: .
-    container_name: olaf-apache
+    container_name: olaf
     hostname:  olaf.sonia.de
     restart: always
     volumes:
@@ -34,8 +34,8 @@ services:
     ports:
        - "8083:80"
 
-  keyclock: 
-    container_name: keycloak_web
+  keyclock:
+    container_name: keycloak
     ports:
       - "8080:8080"
     environment:
@@ -55,9 +55,9 @@ services:
 
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-    image: 'quay.io/keycloak/keycloak:24.0.4'        
-    # command: start --import-realm 
-    command: start-dev --import-realm 
+    image: 'quay.io/keycloak/keycloak:24.0.4'
+    # command: start --import-realm
+    command: start-dev --import-realm --log-level=info
     volumes:
       - .:/opt/keycloak/data/import
     depends_on:
@@ -79,7 +79,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 10s
-      timeout: 10s      
+      timeout: 10s
 
 #volumes:
 #  postgres_data:
