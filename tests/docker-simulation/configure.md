@@ -1,4 +1,8 @@
-* copy tests/docker-simulation/.env.example to .env and set passwords
+* copy .env.docker to .env
+
+* create self signed certificate: 
+
+    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout olaf.key -out olaf.crt -subj "/C=DE/ST=Germany/L=WF/O=Ostfalia/CN=olaf"
 
 * config folder:
 
