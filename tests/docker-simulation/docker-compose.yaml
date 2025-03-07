@@ -21,6 +21,8 @@ services:
       postgres:
         condition: service_healthy
         restart: true
+      keyclock:
+        condition: service_started
 
     build: .
     container_name: olaf
