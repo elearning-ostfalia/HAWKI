@@ -596,8 +596,8 @@
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "0P2HSeOW20aTxrbCETt01Vf5kb8bbwcr",
-    "redirectUris" : [ "http://olaf:8083/", "http://olaf:8083/*", "https://olaf:8083/", "https://olaf:8083/*" ],
-    "webOrigins" : [ "http://olaf:8083/", "http://olaf:8083/*" ],
+    "redirectUris" : [ "http://olaf:4443/", "http://olaf:4443/*", "https://olaf:4443/", "https://olaf:4443/*" ],
+    "webOrigins" : [ "http://olaf:4443/", "http://olaf:4443/*" ],
     "notBefore" : 0,
     "bearerOnly" : false,
     "consentRequired" : false,
@@ -1226,7 +1226,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "saml-role-list-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-address-mapper", "saml-role-list-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "saml-user-property-mapper", "oidc-usermodel-property-mapper" ]
       }
     }, {
       "id" : "6911595f-9a55-4985-90ee-7bac606c1b61",
@@ -1260,7 +1260,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-property-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-user-property-mapper", "oidc-usermodel-property-mapper", "saml-user-attribute-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "saml-role-list-mapper" ]
       }
     }, {
       "id" : "a3a26ba1-e2f9-482f-8ced-06e52847e00c",

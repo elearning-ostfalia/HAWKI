@@ -29,12 +29,14 @@ services:
     hostname:  olaf.sonia.de
     restart: always
     volumes:
+      # source code
       - ../..:/var/www/html
 
     environment:
       - TZ=Europe/Berlin
     ports:
        - "8083:80"
+       - "4443:443"
 
   keyclock:
     container_name: keycloak
