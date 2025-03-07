@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Exception;
 
+use Illuminate\Support\Facades\Log;
 
 class OidcService
 {
@@ -31,6 +32,10 @@ class OidcService
         // Add scopes as an array
         $scopes = config('open_id_connect.oidc_scopes');
         $this->oidc->addScope($scopes);
+        $allowInsecure = (bool) env('APP_ALLOW_INSECURE', false);
+        if ($allowInsecure) {
+            $this->oidc->setHttpUpgradeInsecureRequests(false);
+        }
     }
 
     public function authenticate()
@@ -66,6 +71,7 @@ class OidcService
             }
         } catch (\Exception $e) {
             // Handle errors, such as authentication failures
+            // Log::info('OIDC authenticate error: ' . $e->getMessage());
             return response()->json(['error' => 'Authentication failed: ' . $e->getMessage()], 401);
         }
     }
