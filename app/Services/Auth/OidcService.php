@@ -49,6 +49,7 @@ class OidcService
             $lastNameAttr = config('open_id_connect.attribute_map.lastname');
             $emailAttr = config('open_id_connect.attribute_map.email');
             $employeetypeAttr = config('open_id_connect.attribute_map.employeetype');
+            $usernameAttr = config('open_id_connect.attribute_map.username');
 
             // Retrieve user information
             $email = $this->oidc->requestUserInfo($emailAttr);
@@ -56,19 +57,23 @@ class OidcService
 
             $firstname = $this->oidc->requestUserInfo($firstNameAttr);
             $surname = $this->oidc->requestUserInfo($lastNameAttr);
+            $username =$this->oidc->requestUserInfo($usernameAttr);
+
             $name = trim("$firstname $surname");
 
             // Return UserInfo array to authentication controller
-            if (!empty($_SERVER['REMOTE_USER'])) {
-                return [
-                    'username' => $_SERVER['REMOTE_USER'],
+            // if (!empty($_SERVER['REMOTE_USER'])) {
+            $result=
+                 [
+                    'username' => $username, // $_SERVER['REMOTE_USER'],
                     'name' => $name,
                     'email' => $email,
                     'employeetype' => $employeetype,
                 ];
-            } else {
+/*            } else {
                 throw new \RuntimeException('REMOTE_USER is not set.');
-            }
+            }*/
+            return $result;
         } catch (\Exception $e) {
             // Handle errors, such as authentication failures
             // Log::info('OIDC authenticate error: ' . $e->getMessage());

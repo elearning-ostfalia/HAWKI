@@ -22,9 +22,12 @@ Danach die Datei herunterladen.
 
 Damit dass läuft, muss olaf und keycloak auch noch in /etc/hosts eingetragen werden.
 
-Damit es mit OIDC funktioniert, muss olaf mit olaf:8083 im Browser gestartet werden:
-http://olaf:8083
+Damit es mit OIDC funktioniert, muss olaf mit im Browser wie folgt gestartet werden:
+    
+    http://olaf:8083
 
-Keycloak: http://localhost:8080
+Keycloak: 
+
+    http://localhost:8080
 
 

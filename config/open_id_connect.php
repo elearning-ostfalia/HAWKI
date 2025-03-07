@@ -1,7 +1,7 @@
 <?php
 
 return [
-    
+
     'oidc_idp' => env('OIDC_IDP', ''),
     'oidc_client_id' => env('OIDC_CLIENT_ID', ''),
     'oidc_client_secret' => env('OIDC_CLIENT_SECRET', ''),
@@ -14,6 +14,7 @@ return [
         'lastname' => env('OIDC_LASTNAME_VAR', 'lastname'),
         'email' => env('OIDC_EMAIL_VAR', 'email'),
         'employeetype' => env('OIDC_EMPLOYEETYPE_VAR', 'employeetype'),
+        'username' => env('OIDC_USERNAME_VAR', 'username'),
     ],
 
 ];
