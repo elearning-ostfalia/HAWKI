@@ -1,3 +1,10 @@
+## TODO Olaf: 
+
+* Nutzen des Employeetype in OpenID Connect unklar. Er darf nicht leer sein, weil es sonst 
+  einen Fehler beim Einfügen des Datensatzes in die Datenbank gibt (not null). 
+  Im Code scheint es aber keine Stelle zu geben, wo der Wert geprüft oder ausgewertet wird. 
+
+
 
 ## HAWKI2 is here!
 

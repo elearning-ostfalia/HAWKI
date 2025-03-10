@@ -16,7 +16,7 @@ class ModelConnectionService
 
     public function streamToAiModel(array $payload, callable $onData)
     {
-        set_time_limit(120); 
+        set_time_limit(120);
         // ob_start(); // Start output buffering
 
         // Set headers for SSE (Server-Sent Events)
@@ -31,7 +31,7 @@ class ModelConnectionService
         $provider = $this->utilities->getProvider($payload['model']);
         // Convert the payload to JSON
         $requestPayload = json_encode($payload);
-    
+
         // Initialize a cURL session to make the request to OpenAI
         $ch = curl_init();
 
@@ -70,7 +70,7 @@ class ModelConnectionService
             'Authorization: Bearer ' . $provider['api_key'],
             'Content-Type: application/json'
         ]);
-    
+
         // Process each chunk of data as it is received
         curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($ch, $data) use ($onData) {
             if (connection_aborted()) {
@@ -84,25 +84,28 @@ class ModelConnectionService
                 ob_flush();
             }
             flush();
-            
+
             return strlen($data);
         });
-    
+
         // Execute the cURL session and keep it open to stream data
         curl_exec($ch);
-    
+
         // Handle errors
         if (curl_errno($ch)) {
             $onData('Error:' . curl_error($ch));  // Send the error to the callback
             ob_flush();
             flush();
+            return;
         }
-    
+
         // Close the cURL session when done
         curl_close($ch);
-    
+
         // Explicitly flush any remaining data in the output buffer
-        ob_flush(); 
+        if (ob_get_level() > 0) {
+            ob_flush();
+        }
         flush();
     }
 
@@ -158,7 +161,7 @@ class ModelConnectionService
         header('Content-Type: text/html; charset=UTF-8');
 
         $provider = $this->utilities->getProvider($payload['model']);
-    
+
         // Convert the payload to JSON
         $requestPayload = json_encode([
             'contents'=> $payload['contents']
@@ -174,7 +177,7 @@ class ModelConnectionService
         curl_setopt($ch, CURLOPT_POSTFIELDS, $requestPayload);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        
+
         // Set content type header
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json',
@@ -191,7 +194,7 @@ class ModelConnectionService
         }
 
         curl_close($ch);
-  
+
           // Return the response
           return response($response)->header('Content-Type', 'application/json');
     }

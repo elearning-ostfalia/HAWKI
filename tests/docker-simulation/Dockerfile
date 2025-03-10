@@ -1,5 +1,6 @@
 FROM php:8.2-apache
 
+# RUN apt-get update && apt-get install -y systemd systemd-sysv
 
 # Copy SSL certificate and key
 COPY olaf.crt /etc/ssl/certs/olaf.crt
@@ -7,6 +8,11 @@ COPY olaf.key /etc/ssl/private/olaf.key
 
 # Copy the custom Apache virtual host config
 COPY ./olaf-httpd-vhosts.conf /etc/apache2/sites-available/olaf-ssl.conf
+
+# COPY ./reverb.service /etc/systemd/system
+# COPY ./laravel-worker.service /etc/systemd/system
+
+
 
 RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
@@ -48,6 +54,8 @@ RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && docker-php-ex
 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+
 
 # OLAF Zeugs
 
