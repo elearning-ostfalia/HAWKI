@@ -1,0 +1,17 @@
+# NOT USER IN DOCKER
+
+[Unit]
+Description=Reverb WebSocket Server
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html
+ExecStart=/usr/bin/php /var/www/html/artisan reverb:start
+Restart=always
+TimeoutSec=300
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+# NOT USER IN DOCKER
+
+[Unit]
+Description=Laravel Worker Service
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html
+ExecStart=/usr/bin/php /var/www/html/artisan queue:work --queue=default,mails,message_broadcast --sle>
+Restart=always
+TimeoutSec=300
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
