@@ -55,5 +55,10 @@ php artisan db:seed --force
 echo 'installation finished'
 touch /tmp/OLAF_INSTALLED.txt
 
+
+echo 'start reverb'
+php artisan reverb:start &
+
 # start apache
+echo 'start apache'
 apache2-foreground

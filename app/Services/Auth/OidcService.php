@@ -57,6 +57,10 @@ class OidcService
             // Retrieve user information
             $email = $this->oidc->requestUserInfo($emailAttr);
             $employeetype = $this->oidc->requestUserInfo($employeetypeAttr);
+            if (empty(trim($employeetype))) {
+                // employeetype must not be empty. But which values are expected?
+                $employeetype = 'TODO map employeetype';
+            }
 
             $firstname = $this->oidc->requestUserInfo($firstNameAttr);
             $surname = $this->oidc->requestUserInfo($lastNameAttr);
