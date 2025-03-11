@@ -12,14 +12,14 @@ function addMessageToChatlog(messageObj, isFromServer = false){
     // set dataset attributes
     messageElement.dataset.role = messageObj.message_role;
     messageElement.dataset.rawMsg = messageObj.content;
-    
+
     //if date and time is confirmed from the server add them
     if(messageObj.created_at) messageElement.dataset.created_at = messageObj.created_at;
 
     // set id (whole . deci format)
     if(messageObj.message_id){
         messageElement.id = messageObj.message_id;
-    } 
+    }
 
     /// CLASSES & AVATARS
     // add classes AI ME MEMBER to the element
@@ -66,7 +66,7 @@ function addMessageToChatlog(messageObj, isFromServer = false){
     /// Set Author Name
     if(messageObj.model && messageObj.message_role === 'assistant'){
         model = modelsList.find(m => m.id === messageObj.model);
-        messageElement.querySelector('.message-author').innerHTML = 
+        messageElement.querySelector('.message-author').innerHTML =
             model ?
             `<span>${messageObj.author.username} </span><span class="message-author-model">(${model.label})</span>`:
             `<span>${messageObj.author.username} </span><span class="message-author-model">(${messageObj.model}) !!! Obsolete !!!</span>`;
@@ -149,7 +149,7 @@ function addMessageToChatlog(messageObj, isFromServer = false){
             setMessageStatusAsRead(messageElement);
         }
     }
- 
+
 
     /// INSERT IN CHATLOG
     // insert into target thread
@@ -208,7 +208,7 @@ function updateMessageElement(messageElement, messageObj, updateContent = false)
     const msgTxtElement = messageElement.querySelector(".message-text");
 
     if(updateContent){
-        
+
         const filteredContent = detectMentioning(messageObj.content);
         messageElement.dataset.rawMsg = messageObj.content;
 
@@ -269,11 +269,11 @@ function setDateSpan(activeThread, msgDate, formatDay = true){
         const formattedDate = `${msgDateObj.getDate()}.${msgDateObj.getMonth()+1}.${msgDateObj.getFullYear()}`
         dateText = formattedDate;
     }
-    
+
     // Find the last date span in the thread
     const lastThreadDateSpan = activeThread.querySelector('span.date_span:last-of-type');
     const lastDate = lastThreadDateSpan ? lastThreadDateSpan.getAttribute('data-date') : null;
-    
+
     // Initialize variable to keep track of the last found date_span
     let lastTrunkDate = null;
     //if in a banch then find out the last time span in the main thread
@@ -331,9 +331,9 @@ function detectMentioning(rawText){
 
     if (mentionMatches) {
         let processedText = rawText;
-        
+
         for (const mention of mentionMatches) {
-            if (mention.toLowerCase() === "@hawki") {
+            if (mention.toLowerCase() === "@olaf") {
                 returnObj.aiMentioned = true;
                 returnObj.aiMention = mention; // Remove the '@' for aiMention
                 processedText = processedText.replace(new RegExp(mention, 'i'), '').trim();
@@ -449,16 +449,16 @@ function editMessage(provider){
     msgControls.querySelector('.edit-controls').style.display = 'flex';
     const wrapper = provider.closest('.message-wrapper');
     wrapper.classList.add('edit-mode');
-    
+
     const content = wrapper.querySelector('.message-content');
 
     content.setAttribute('contenteditable', true);
     content.dataset.tempContent = content.innerHTML;
-    
+
     const rawMsg = content.closest('.message').dataset.rawMsg;
-    
+
     content.innerHTML = escapeHTML(rawMsg).replace(/\n/g, '<br>');
-    
+
     content.focus();
 
     var range,selection;
@@ -472,7 +472,7 @@ function editMessage(provider){
         selection.addRange(range);
     }
     else if(document.selection)
-    { 
+    {
         range = document.body.createTextRange();
         range.moveToElementText(content);
         range.collapse(false);
@@ -507,7 +507,7 @@ async function confirmEditMessage(provider){
     msgControls.querySelector('.controls').style.opacity = '1';
     msgControls.querySelector('.edit-controls').style.opacity = '0';
     msgControls.querySelector('.edit-controls').style.display = 'none';
-    
+
     const wrapper = provider.closest('.message-wrapper');
     wrapper.classList.remove('edit-mode');
 
@@ -668,7 +668,7 @@ function messageReadAloud(provider) {
     provider.innerHTML = stopReadIcon;
 
     synth.speak(utterance);
-    
+
     // Reset icon when speech ends
     utterance.onend = () => {
         if (provider === previousProvider) {

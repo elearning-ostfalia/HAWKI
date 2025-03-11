@@ -1,5 +1,9 @@
 {
-    "ADD YOUR CURSTOM KEYS HERE": ""
-
-
+    "ADD YOUR CURSTOM KEYS HERE": "",
+    "Guidelines": "Leitfaden zum Umgang mit OLAF",
+    "Exported_At":"Exportiert aus OLAF am:",
+    "AboutHAWKI": "Über OLAF",
+    "AboutHAWKI_ArianInfo": " | Wissenschaftlicher Mitarbeiter | OLAF",
+    "MistakeWarning": "OLAF kann Fehler machen. Überprüfe wichtige Informationen.",
+    "Reg_SL5_T": "Wichtig: Ohne diesen Passkey kannst du später nicht mehr auf deine gespeicherten Chats zugreifen. Falls du den Passkey verlierst, sind deine bisherigen Chats leider nicht wiederherstellbar. Sichere also deinen Passkey gut - und dann viel Spaß mit OLAF! 🚀"
 }
