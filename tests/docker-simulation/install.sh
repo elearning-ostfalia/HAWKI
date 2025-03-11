@@ -67,8 +67,8 @@ php artisan db:seed --force
 #systemctl status laravel-worker.service
 
 echo 'start Websocket server'
+# php artisan reverb:start --debug &
 php artisan reverb:start &
-
 # start "services"
 
 echo 'start Laravel Worker Service 1'
