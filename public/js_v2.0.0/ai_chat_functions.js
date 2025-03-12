@@ -12,7 +12,13 @@ function initializeAiChatModule(chatsObject){
     chatlogElement = document.querySelector('.chatlog');
 
     // defaultPromt = "You're a helpful assistant at the HAWK university of applied sciences and arts.";
-    defaultPromt =`Du bist ein intelligentes und unterstützendes KI-Assistenzsystem für alle Hochschulangehörigen der HAWK Hildesheim/Holzminden/Göttingen. Dein Ziel ist es, Studierende, Lehrende, Forschende und Mitarbeitende in ihrer akademischen Arbeit, beim Lernen, Forschen, Lehren und verwalterischen Aufgaben zu unterstützen. Dabei förderst du kollaboratives Arbeiten, wissenschaftliches Denken und eine kreative Problemlösung. Beziehe dich auf wissenschaftliche Methoden und Theorien, argumentiere sachlich und reflektiere kritisch. Sei objektiv und verzichte auf unbegründete Meinungen. Fördere akademische Integrität und unterstütze keine Plagiate. Sei inklusiv, wertschätzend und respektiere Vielfalt.`
+    defaultPromt =`Du bist ein intelligentes und unterstützendes KI-Assistenzsystem für alle Hochschulangehörigen der Ostfalia.
+    Dein Ziel ist es, Studierende, Lehrende, Forschende und Mitarbeitende in ihrer akademischen Arbeit, beim Lernen,
+    Forschen, Lehren und verwalterischen Aufgaben zu unterstützen.
+    Dabei förderst du kollaboratives Arbeiten, wissenschaftliches Denken und eine kreative Problemlösung.
+    Beziehe dich auf wissenschaftliche Methoden und Theorien, argumentiere sachlich und reflektiere kritisch.
+    Sei objektiv und verzichte auf unbegründete Meinungen. Fördere akademische Integrität und unterstütze keine Plagiate.
+    Sei inklusiv, wertschätzend und respektiere Vielfalt.`
 
     const systemPromptFields = document.querySelectorAll('.system_prompt_field');
     systemPromptFields.forEach(field => {
@@ -35,7 +41,7 @@ function initializeAiChatModule(chatsObject){
 
 
 function onHandleKeydownConv(event){
-    
+
     if(getSendBtnStat() === SendBtnStatus.SENDABLE){
         if(event.key == "Enter" && !event.shiftKey){
             event.preventDefault();
@@ -46,7 +52,7 @@ function onHandleKeydownConv(event){
 }
 
 function onSendClickConv(btn){
-    
+
     if(getSendBtnStat() === SendBtnStatus.SENDABLE){
 
         selectActiveThread(btn);
@@ -54,7 +60,7 @@ function onSendClickConv(btn){
         const input = btn.closest('.input');
         const inputField = input.querySelector('.input-field');
         sendMessageConv(inputField);
-    } 
+    }
     else if(getSendBtnStat() === SendBtnStatus.STOPPABLE){
         abortCtrl.abort();
     }
@@ -88,7 +94,7 @@ async function sendMessageConv(inputField) {
     // if the chat is empty we need to initialize a new chatlog.
     let initConvPromise;
     if (document.querySelector('.trunk').childElementCount === 0) {
-        await initNewConv(messageObj);  
+        await initNewConv(messageObj);
     }
     else{
         // ADDING MESSAGE TO CHATLOG
@@ -157,9 +163,9 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
                 messageElement = addMessageToChatlog(messageObj, false);
             }
             messageElement.dataset.rawMsg = msg;
-    
+
             const msgTxtElement = messageElement.querySelector(".message-text");
-    
+
             msgTxtElement.innerHTML = formatChunk(content);
             formatMathFormulas(msgTxtElement);
             formatHljs(messageElement);
@@ -167,7 +173,7 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
             if(messageElement.querySelector('.think')){
                 scrollPanelToLast(messageElement.querySelector('.think').querySelector('.content-container'));
             }
-    
+
             scrollToLast(false, messageElement);
         }
 
@@ -182,7 +188,7 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
             messageObj.tag = cryptoMsg.tag;
 
             activateMessageControls(messageElement);
-            
+
             const requestObj = {
                 'threadID': activeThreadIndex,
                 'content': messageObj.ciphertext,
@@ -205,7 +211,7 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
                 updateMessageElement(messageElement, submittedObj);
                 activateMessageControls(messageElement);
             }
-            
+
             if(isDone){
                 isDone(true);
             }
@@ -218,18 +224,18 @@ async function buildRequestObjectForAiConv(msgAttributes, messageElement = null,
 
 /// Initializing a new conversation.
 async function initNewConv(messageObj){
-    
+
     // if start State panel is there remove it.
     chatlogElement.classList.remove('start-state');
 
     // empty chatlog
     clearChatlog();
-    // 
+    //
     history.replaceState(null, '', `/chat`);
 
     //add new message Element.
     const messageElement = addMessageToChatlog(messageObj, false);
-    
+
     //create conversation button in the list.
     const convItem = createChatItem();
     convItem.classList.add('active');
@@ -240,7 +246,7 @@ async function initNewConv(messageObj){
     //submit conv to server.
     // after the server has accepted Submission conv data will be updated.
     const convData = await submitConvToServer(convName);
-    
+
     //assign Slug to conv Item.
     convItem.setAttribute('slug', convData.slug);
     //update URL
@@ -300,7 +306,7 @@ function startNewChat(){
 }
 
 function createChatItem(conv = null){
-    
+
     const convItem = chatItemTemplate.content.cloneNode(true);
     const chatsList = document.getElementById('chats-list');
     const label = convItem.querySelector('.label');
@@ -340,7 +346,7 @@ async function generateChatName(firstMessage, convItem) {
             ]
         },
         broadcast: false,
-        threadIndex: '', 
+        threadIndex: '',
         slug: '',
     };
 
@@ -377,7 +383,7 @@ async function submitConvToServer(convName) {
         'iv':cryptSystemPrompt.iv,
         'tag':cryptSystemPrompt.tag,
     });
-    
+
 
     const requestObject = {
         conv_name: convName,
@@ -389,7 +395,7 @@ async function submitConvToServer(convName) {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') 
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
             body: JSON.stringify(requestObject)
         });
@@ -411,12 +417,12 @@ async function submitConvToServer(convName) {
 async function loadConv(btn=null, slug=null){
 
     abortCtrl.abort();
-    
+
     if(!btn && !slug){
         return;
     }
 
-    if(!slug) slug = btn.getAttribute('slug'); 
+    if(!slug) slug = btn.getAttribute('slug');
     if(!btn) btn = document.querySelector(`.selection-item[slug="${slug}"]`);
     // switchDyMainContent('chat');
 
