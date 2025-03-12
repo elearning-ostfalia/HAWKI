@@ -13,8 +13,8 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'AI',
-            'username' => 'HAWKI',
-            'email' => 'HAWKI@hawk.de',
+            'username' => 'OLAF',
+            'email' => 'OLAF@ostfalia.de', // todo! Mail-Adresse (Liste) anlegen und hier eintragen
             'employeetype' => 'AI',
             'publicKey' => '0',
             'avatar_id' => 'hawkiAvatar.jpg'
