@@ -33,7 +33,7 @@
                 <p>
                     Die Ostfalia Hochschule für angewandte Wissenschaften – Hochschule Braunschweig/Wolfenbüttel
                     ist eine Körperschaft des öffentlichen Rechts und wird durch die Präsidentin,
-                    Frau Prof. Dr.-Ing. Rosemarie Karger gesetzlich vertreten.
+                    Frau Dr. Julia Siegmüller gesetzlich vertreten.
                 </p>
 
                 <h2> Name und Anschrift des Datenschutzbeauftragten:</h2>
