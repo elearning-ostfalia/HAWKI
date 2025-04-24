@@ -1,5 +1,6 @@
 <?php
-    define('GPT_AI_MODEL', 'gpt-4o');
+//    define('GPT_AI_MODEL', 'gpt-4o'); // OLD
+    define('GPT_AI_MODEL', 'gpt-4.1');
 
 	session_start();
 
