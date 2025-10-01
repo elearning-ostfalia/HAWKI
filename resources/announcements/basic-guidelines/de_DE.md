@@ -1,8 +1,8 @@
-# Leitfaden für den Umgang mit HAWKI
+# Leitfaden für den Umgang mit OLAF
 
-Willkommen zum Leitfaden für den Umgang mit HAWKI, das Sprachmodelle von OpenAI, Google und OpenSource-Modelle über die GWDG zur Verfügung stellt.  
+Willkommen zum Leitfaden für den Umgang mit OLAF, das Sprachmodelle von OpenAI, Google und OpenSource-Modelle über die GWDG zur Verfügung stellt.  
 
-Dieser Leitfaden soll allen Hochschulangehörigen und Hochschulmitgliedern eine klare Richtlinie bieten, wie mit dieser Technologie verantwortungsbewusst umgegangen werden soll. Bitte beachten Sie, dass dieser Leitfaden die Nutzungsbedingungen von OpenAI und Google ergänzt und keinen Anspruch auf Vollständigkeit erhebt. Es liegt in der Verantwortung der Nutzer*innen, die Nutzungsbedingungen einzuhalten.  
+Dieser Leitfaden soll allen Hochschulangehörigen - Studierenden, Lehrenden und Mitarbeitenden - eine klare Richtlinie bieten, wie mit dieser Technologie verantwortungsbewusst umgegangen werden soll. Bitte beachten Sie, dass dieser Leitfaden die Nutzungsbedingungen von OpenAI und Google ergänzt und keinen Anspruch auf Vollständigkeit erhebt. Es liegt in der Verantwortung der Nutzer*innen, die Nutzungsbedingungen einzuhalten.  
 
 ---
 
@@ -26,9 +26,9 @@ Dieser Leitfaden soll allen Hochschulangehörigen und Hochschulmitgliedern eine 
 ### Genauigkeit:
 - Die Nutzung der Dienste kann zu ungenauem oder fehlerhaftem Output führen.  
 - Es ist wichtig, dass Sie den Output kritisch prüfen und nicht als alleinige Quelle der Wahrheit verwenden.  
-- Ihre Eingaben werden nicht von der HAWK, aber von OpenAI für 30 Tage gespeichert, um einen eventuellen Missbrauch festzustellen. Nach 30 Tagen werden die Daten gelöscht.  
+- Ihre Eingaben werden nicht von der Ostfalia, aber von OpenAI für 30 Tage gespeichert, um einen eventuellen Missbrauch festzustellen. Nach 30 Tagen werden die Daten gelöscht.  
 - Ihre Eingaben werden nicht verwendet, um das Produkt sicherer oder besser zu machen.  
-- Die HAWK hat einen Datenverarbeitungsvertrag mit der GWDG, in dem festgelegt ist, dass seitens der GWDG keine Daten gespeichert werden, die über HAWKI an die GWDG geschickt werden.  
+- Die Ostfalia hat einen Datenverarbeitungsvertrag mit der GWDG, in dem festgelegt ist, dass seitens der GWDG keine Daten gespeichert werden, die über die Ostfalia an die GWDG geschickt werden.  
 - Eine Übersicht der von der GWDG zur Verfügung gestellten Modelle finden Sie unter: [GWDG Modelle](https://docs.hpc.gwdg.de/services/chat-ai/models/index.html)  
 
 ---
@@ -43,7 +43,7 @@ Im Gruppenchat gelten folgende Grundregeln für den respektvollen Umgang miteina
 - Verbreiten Sie keine falschen oder irreführenden Informationen.  
 - Seien Sie sich bewusst, dass alle Nachrichten im Gruppenchat von den Gruppenmitgliedern gelesen und verarbeitet werden können.  
 - Die Nutzung des Gruppenchats sollte sich an den allgemeinen ethischen und datenschutzrechtlichen Vorgaben der Hochschule orientieren.  
-- Bei missbräuchlichem oder diskriminierendem Verhalten behalten wir uns vor, Sie von der Nutzung von HAWKI auszuschließen.  
+- Bei missbräuchlichem oder diskriminierendem Verhalten behalten wir uns vor, Sie von der Nutzung von OLAF auszuschließen.  
 - Alle im Gruppenchat geteilten Inhalte können von anderen Teilnehmenden gesehen und verarbeitet werden.  
 - Seien Sie sich bewusst, dass keine sensiblen oder personenbezogenen Daten im Chat geteilt werden sollten.  
 
@@ -68,31 +68,31 @@ Die Verantwortung für die urheberrechtliche Zulässigkeit des Uploads liegt bei
 ### Datenschutz und Verarbeitung:
 - Die Datenverarbeitung erfolgt ausschließlich zum Zweck der Nutzung innerhalb der Hochschule.  
 - Eine Weitergabe an Dritte findet nicht statt.  
-- Weitere Informationen finden Sie in der Datenschutzerklärung von HAWKI.  
+- Weitere Informationen finden Sie in der Datenschutzerklärung von OLAF.  
 
 ---
 
 ## Spezifische Bestimmungen
 
 - Für den Einsatz generativer KI-Systeme gibt es eine vorläufige Leitlinie und eine Eigenständigkeitserklärung.  
-- Studierende dürfen HAWKI zur Unterstützung ihres Lernprozesses verwenden, sollten sich jedoch nicht ausschließlich auf die generierten Antworten verlassen.  
+- Studierende dürfen OLAF zur Unterstützung ihres Lernprozesses verwenden, sollten sich jedoch nicht ausschließlich auf die generierten Antworten verlassen.  
 - Die Eingabe personenbezogener Daten – sowohl eigener als auch anderer – ist untersagt.  
-- Die Verantwortung für Inhalte, die mithilfe von HAWKI entstehen, liegt bei den Studierenden selbst.  
+- Die Verantwortung für Inhalte, die mithilfe von OLAF entstehen, liegt bei den Studierenden selbst.  
 - Studierende übernehmen die Autor*innenschaft und verpflichten sich, die Nutzung von KI transparent zu machen.  
-- **Lehrende:** Nutzung von HAWKI zur automatisierten Korrektur von Prüfungsleistungen, Hausarbeiten, Essays, Gutachten oder vergleichbaren Leistungsnachweisen ist nicht erlaubt.  
+- **Lehrende:** Nutzung von OLAF zur automatisierten Korrektur von Prüfungsleistungen, Hausarbeiten, Essays, Gutachten oder vergleichbaren Leistungsnachweisen ist nicht erlaubt.  
 - Dieses Verbot orientiert sich am EU AI Act, der den Einsatz generativer KI in hochriskanten bildungsbezogenen Bewertungssituationen untersagt.  
-- Erlaubt ist der Einsatz von HAWKI in unterstützenden Kontexten (Rechtschreibprüfung, Feedback-Vorbereitung, sprachliche Vereinfachung, Erstellung von Bewertungsrastern oder Übungsmaterialien).  
+- Erlaubt ist der Einsatz von OLAF in unterstützenden Kontexten (Rechtschreibprüfung, Feedback-Vorbereitung, sprachliche Vereinfachung, Erstellung von Bewertungsrastern oder Übungsmaterialien).  
 - **Mitarbeitende:** Es ist untersagt, Dokumente hochzuladen, die unter Geheimhaltungsvereinbarungen stehen oder personenbezogene Daten enthalten.  
 
 ---
 
 ## Schlusswort
 
-Dieser Leitfaden dient als Orientierungshilfe für den verantwortungsbewussten Umgang mit HAWKI.  
+Dieser Leitfaden dient als Orientierungshilfe für den verantwortungsbewussten Umgang mit OLAF.  
 Die Hochschule kann diesen Service nur anbieten, wenn Sie keine persönlichen Daten eingeben.  
 
 **Kontakt bei Fragen:**  
-Prof. Stefan Wölwer, Arian Sadafi, Jonas Trippler oder Vincent Timm.  
+Peter Lohse  
 
 Ungeachtet dieses Leitfadens gelten die Nutzungsbedingungen von OpenAI und Google.  
 

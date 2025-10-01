@@ -69,6 +69,7 @@
                 </div>
 
                 <div class="content-text-container">
+                    <p>{!! $translation['AboutHAWKI_OlafInfo'] !!}</p>
                     <p>{{ $translation['AboutHAWKI_Info'] }}</p>
                     <p>
                         <a class="accentText contributor-title" target="_blank" href="https://www.hawk.de/en/university/organization-and-persons/register-of-persons/stefan-wolwer"><b>Prof. Stefan Wölwer</b></a>{{ $translation['AboutHAWKI_StefanInfo'] }}<br/>
