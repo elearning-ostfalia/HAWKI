@@ -55,6 +55,9 @@
     --button-secondary-color: #ffffff !important;
 
     --link-color: #000 !important;
+    .logo {
+        background-image: url("/img/logo.png") !important;
+    }
 }
 
 .darkMode{
@@ -87,10 +90,13 @@
     --button-text-color: #ffffff !important;
 
     --link-color: #ffffff !important;
+    .logo {
+        background-image: url("/img/logo-dark-mode.svg") !important;
+    }
 }
 
 
-.logo{
+.logo {
     /* adjust width and aspect ratio as needed 
     width: 8rem !important; */
     width: 16rem !important;
@@ -98,8 +104,8 @@
     aspect-ratio: 2.226/1 !important; */
     aspect-ratio: 4.72/1 !important;
 
-    background-image: url("/img/logo.png") !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     /* background-size: auto !important; */
 }
+
