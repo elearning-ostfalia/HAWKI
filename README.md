@@ -1,3 +1,23 @@
+## OLAF2 is here! ;-)
+
+### Installation Guide für eine einfache Docker-Umgebung
+
+* update shell script permissions (if they not match)
+
+        find . -type f -name "*.sh" -exec chmod +x {} \;
+        chmod +x artisan
+        chmod +x bin/env
+
+* Erzeugen der .env-Datei
+
+        ./bin/env
+
+* Starten der Docker-Umgebung
+
+        ./bin/env up
+
+
+
 
 ## HAWKI2 is here!
 
