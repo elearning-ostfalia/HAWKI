@@ -1,5 +1,5 @@
 {
-    "Guidelines": "Leitfaden zum Umgang mit HAWKI",
+    "Guidelines": "Leitfaden zum Umgang mit OLAF",
 
     "Chat":"Chat",
     "Groupchat":"Gruppenchat",
@@ -14,7 +14,7 @@
     "Cnf_leaveRoom": "Möchtest du diesen Raum wirklich verlassen?",
     "Cnf_removeMember": "Möchtest du dieses Mitglied wirklich entfernen?",
 
-    "Cnf_tokenMsg1": "Bitte bewahre diesen Token sicher auf und verwende ihn mit Bedacht, um dein Konto zu schützen. Wenn HAWKI verdächtiges Verhalten feststellt, wird dieser Token widerrufen.",
+    "Cnf_tokenMsg1": "Bitte bewahre diesen Token sicher auf und verwende ihn mit Bedacht, um dein Konto zu schützen. Wenn OLAF verdächtiges Verhalten feststellt, wird dieser Token widerrufen.",
     "Cnf_tokenMsg2": "Sobald du dieses Fenster schließt, kannst du diesen Schlüssel nicht mehr erneut abrufen.",
     "Cnf_tokenMsgSuccess": "Token erfolgreich erstellt",
     "Cnf_tokenRevoke": "Bist du sicher, dass du den Token widerrufen möchtest?",
@@ -22,7 +22,7 @@
 
     "Cnf_RemoveFile":"Möchtest du diese Datei wirklich löschen?",
 
-    "Logout_Warning":"Um HAWKI weiterhin zu nutzen, müssen Sie diese Bedingungen akzeptieren.<strong>Klicken Sie auf „Bestätigen“, um sich von HAWKI abzumelden.</strong>",
+    "Logout_Warning":"Um OLAF weiterhin zu nutzen, müssen Sie diese Bedingungen akzeptieren.<strong>Klicken Sie auf „Bestätigen“, um sich von OLAF abzumelden.</strong>",
 
     "Input_Err_UploadFailed": "Fehler beim Hochladen der Datei!",
     "Input_Err_NotSupported": "Dateityp wird nicht unterstützt:",
@@ -33,7 +33,7 @@
 
     "Summery": "Zusammenfassung",
     "Auto_Generated":"automatisiert erstellt",
-    "Exported_At":"Exportiert aus HAWKI am:",
+    "Exported_At":"Exportiert aus OLAF am:",
     "By":"von",
     "Chatlog":"Verlauf",
     "Rooms": "Räume",
@@ -41,7 +41,7 @@
     "RemovedMember": "nicht verfügbar",
 
     "Abort": "Abbrechen",
-    "AboutHAWKI": "Über HAWKI",
+    "AboutHAWKI": "Über OLAF",
     "AboutHAWKI_ArianInfo": " | Wissenschaftlicher Mitarbeiter | HAWKI",
     "AboutHAWKI_Info": "Das Angebot wurde im Interaction Design Lab der HAWK entwickelt, um allen Hochschulangehörigen die Möglichkeit zu geben, künstliche Intelligenz in die Arbeitsprozesse zu integrieren und einen Begegnungsraum zu haben, damit sich eventuell neue Arbeitsweisen ergeben und eine hochschulinterne Diskussion über den Einsatz von K.I. entstehen kann. Dieses Angebot möchte auch didaktisch unterstützen, ein Verständnis für die Wirkungsweise eines solchen Sprachmodells zu entwickeln und gibt daher in den verschiedenen Bereichen auch Hinweise auf gut funktionierende Prompts (Texteingaben). Wir freuen uns über konstruktives Feedback, um dieses Angebot entsprechend Ihren Bedürfnissen und Erkenntnissen weiterzuentwickeln.",
     "AboutHAWKI_JonasInfo": " | Wissenschaftlicher Mitarbeiter | Hands On",
@@ -101,7 +101,7 @@
     "MemberInvite": "Mitglieder einladen",
     "MemberRemove": "Mitglied entfernen",
     "Members": "Mitglieder",
-    "MistakeWarning": "HAWKI kann Fehler machen. Überprüfe wichtige Informationen.",
+    "MistakeWarning": "OLAF kann Fehler machen. Überprüfe wichtige Informationen.",
     "Models": "Modelle",
     "password": "Kennwort",
     "PersonalData": "Persönliche Daten",
@@ -143,6 +143,6 @@
     "PH_ChooseDescription": "Beschreibung eingeben",
     "PH_SystemPrompt": "Gebe deine bevorzugte Systemprompt ein",
     "PH_SearchBar": "Name, Benutzername oder E-Mail eingeben",
-    "Api_Warning": "Um die Sprachmodelle von HAWKI auch in anderen Anwendungen nutzen zu können, kann ein eigener API-Schlüssel generiert werden. Schreibe dazu eine E-Mail an deine IT, die den API-Key für dich generieren und dir zusenden wird.",
+    "Api_Warning": "Um die Sprachmodelle von OLAF auch in anderen Anwendungen nutzen zu können, kann ein eigener API-Schlüssel generiert werden. Schreibe dazu eine E-Mail an deine IT, die den API-Key für dich generieren und dir zusenden wird.",
     "UploadFile": "Datei hochladen"
 }
