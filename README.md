@@ -16,8 +16,9 @@
 
         ./bin/env up
 
+## Konfiguration
 
-
+OPENAI_API_KEY, GWDG_API_KEY unbd ggf. weitere Schlüssel in der .env-Datei setzen.
 
 ## HAWKI2 is here!
 
