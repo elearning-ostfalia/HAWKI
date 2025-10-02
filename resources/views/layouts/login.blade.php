@@ -9,6 +9,7 @@
 
     <link rel="icon" href="{{ asset('favicon.ico') }}">
 
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/settings_style.css') }}">
@@ -17,6 +18,7 @@
     <script src="{{ asset('js/settings_functions.js') }}"></script>
     <script src="{{ asset('js/announcements.js') }}"></script>
     @vite('resources/js/app.js')
+
 
     {!! $settingsPanel !!}
 
@@ -90,21 +92,26 @@
                 return;
             }
             if(username.value && password.value){
+
                 submitLogin();
             }
         }
     }
 
+
     async function submitLogin() {
         try {
             var formData = new FormData();
+
             formData.append('account', document.getElementById('account').value);
             formData.append('password', document.getElementById('password').value);
             const csrfToken = document.getElementById('hawkiLoginForm').querySelector('input[name="_token"]').value;
 
+
             const response = await fetch('/req/login', {
                 method: 'POST',
                 headers: {
+
                     'X-CSRF-TOKEN': csrfToken,
                     'Accept': 'application/json'
                 },
@@ -112,17 +119,20 @@
             });
 
             if (!response.ok) {
+
                 throw new Error('Login request failed');
             }
 
             const data = await response.json();
 
             if (data.success) {
+
                 await setOverlay(true, true);
                 window.location.href = data.redirectUri;
 
             } else {
                 // console.log('login failed');
+
                 document.getElementById('login-message').textContent = 'Login Failed!';
             }
         } catch (error) {
