@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="{{ asset('css_v2.1.0/login_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css_v2.1.0/settings_style.css') }}">
 
+    @vite('resources/js/app.js')
+
     <script src="{{ asset('js_v2.1.0/functions.js') }}"></script>
+    <script src="{{ asset('js_v2.1.0/announcements.js') }}"></script>
     <script src="{{ asset('js_v2.1.0/settings_functions.js') }}"></script>
 
     {!! $settingsPanel !!}
