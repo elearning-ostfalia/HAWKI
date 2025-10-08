@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.4-apache
 
 
 
@@ -12,7 +12,8 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 
 RUN  apt-get update && apt-get install -y ca-certificates gnupg
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+# install node.js 20
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y nodejs
 

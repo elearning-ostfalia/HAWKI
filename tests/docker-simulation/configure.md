@@ -2,9 +2,9 @@
 
 * ggf. chmod +x install.sh (falls Permissions nicht passen)
 
-* copy .env.docker to .env
+* cp .env.docker .env
 
-* add OPENAI and GWDG Key to .env
+* set AI keys in .env
 
 * config folder:
 

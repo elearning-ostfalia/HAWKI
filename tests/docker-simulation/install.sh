@@ -30,55 +30,24 @@ echo '[
 
 composer install
 npm install
-npm run build
 
-php artisan key:generate --show
+# node --version
+# npm --version
 
-# => copy key to .env in APP_KEY
-echo 'create storage link'
-php artisan storage:link
-# RUN runuser  -u www-data php artisan storage:link
-
-# php artisan cache:clear
-# TODO: do not set 777 permissions!!!!!!!!!!
-chmod -R 777 storage
-chmod -R 777 storage/*
-#chmod -R 775 storage
-#chmod -R 775 storage/*
-# composer dump-autoload
-
-echo 'migrate database'
-php artisan migrate --force
-echo 'database seed'
-php artisan db:seed --force
+# npm run build
 
 
+php hawki check
 
+php hawki init
 
-#systemctl daemon-reload
-
-#systemctl enable reverb.service
-#systemctl enable laravel-worker.service
-
-#systemctl start reverb.service
-#systemctl start laravel-worker.service
-
-#systemctl status reverb.service
-#systemctl status laravel-worker.service
-
-echo 'start Websocket server'
-# php artisan reverb:start --debug &
-php artisan reverb:start &
-# start "services"
-
-echo 'start Laravel Worker Service 1'
-php artisan queue:work &
-echo 'start Laravel Worker Service 2'
-php artisan queue:work --queue=mails &
-echo 'start Laravel Worker Service 3'
-php artisan queue:work --queue=message_broadcast &
+php hawki migrate
 
 #su www-data php artisan queue:work --queue=default,mails,message_broadcast
+
+php artisan storage:link
+
+npm run build
 
 echo 'installation finished'
 touch /tmp/OLAF_INSTALLED.txt
