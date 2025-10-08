@@ -1,8 +1,10 @@
+# Installation
+
+* ggf. chmod +x install.sh (falls Permissions nicht passen)
+
 * copy .env.docker to .env
 
-* create self signed certificate: 
-
-    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout olaf.key -out olaf.crt -subj "/C=DE/ST=Germany/L=WF/O=Ostfalia/CN=olaf"
+* add OPENAI and GWDG Key to .env
 
 * config folder:
 
@@ -21,6 +23,12 @@ Wechseln in den Container und dann
         /opt/keycloak/bin/kc.sh export --realm olaf-realm --file /tmp/olaf-realm.json
 
 Danach die Datei herunterladen.
+
+# Info
+
+* create self signed certificate: 
+
+    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout olaf.key -out olaf.crt -subj "/C=DE/ST=Germany/L=WF/O=Ostfalia/CN=olaf"
 
 # Aufruf
 
