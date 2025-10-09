@@ -16,6 +16,13 @@
 * Users: user1/user1, user2/user2, user3/user3
 * 
 
+
+# Info
+
+* create self signed certificate: 
+
+    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout olaf.key -out olaf.crt -subj "/C=DE/ST=Germany/L=WF/O=Ostfalia/CN=olaf"
+
 * Exportieren des Realm olaf-realm: 
 
 Wechseln in den Container und dann 
@@ -24,11 +31,6 @@ Wechseln in den Container und dann
 
 Danach die Datei herunterladen.
 
-# Info
-
-* create self signed certificate: 
-
-    openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout olaf.key -out olaf.crt -subj "/C=DE/ST=Germany/L=WF/O=Ostfalia/CN=olaf"
 
 # Aufruf
 

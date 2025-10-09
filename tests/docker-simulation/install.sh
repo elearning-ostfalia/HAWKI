@@ -36,18 +36,35 @@ npm install
 
 # npm run build
 
-
+echo "hawki check"
 php hawki check
 
+
+echo "hawki init"
 php hawki init
 
+
+#echo "artisan migrate:rollback"
+#php artisan migrate:rollback
+
+#echo "php artisan make:session-table"
+#php artisan make:session-table
+
+
+echo "hawki migrate"
 php hawki migrate
 
 #su www-data php artisan queue:work --queue=default,mails,message_broadcast
 
-php artisan storage:link
+# echo "artisan storage:link"
+# php artisan storage:link
 
+echo "npm run build"
 npm run build
+
+# todo: better add user to group or something
+chmod -R 777 storage
+chmod -R 777 storage/*
 
 echo 'installation finished'
 touch /tmp/OLAF_INSTALLED.txt
