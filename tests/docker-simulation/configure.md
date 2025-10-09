@@ -38,7 +38,7 @@ Damit dass läuft, muss olaf und keycloak auch noch in /etc/hosts eingetragen we
 
 Damit es mit OIDC funktioniert, muss olaf mit im Browser wie folgt gestartet werden:
     
-    http://olaf:8083
+    https://olaf:4443
 
 Keycloak: 
 
