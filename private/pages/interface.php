@@ -219,12 +219,30 @@
 							if(isset($env) and isset($env["MODEL_SELECTOR_ACTIVATION"]) and $env["MODEL_SELECTOR_ACTIVATION"] === "true") {
 								echo					
 									'<select id="model-selector" onchange="OnDropdownModelSelection()">
-										<option value="' . GPT_AI_MODEL . '">OpenAI ' . GPT_AI_MODEL . '</option>
-										<option value="meta-llama-3.1-8b-instruct">meta-llama-3.1-8b-instruct</option>
-										<option value="meta-llama-3.1-70b-instruct">meta-llama-3.1-70b-instruct</option>
-										<option value="llama-3-sauerkrautlm-70b-instruct">Llama 3 70B Sauerkraut</option>
-										<option value="mixtral-8x7b-instruct">Mixtral-8x7b-instruct</option>
-										<option value="qwen2-72b-instruct">Qwen 2 72B Instruct</option>
+										<option value="' . GPT_AI_MODEL . '" selected>OpenAI ' . GPT_AI_MODEL . '</option>
+										<option value="meta-llama-3.1-8b-instruct">Llama 3.1 8b Instruct</option>
+										<option value="codestral-22b">Codestral 22B</option>
+										<option value="qwen2.5-vl-72b-instruct">Qwen 2.5 VL 72B Instruct</option>
+										<option value="qwen2.5-coder-32b-instruct">Qwen 2.5 Coder 32B Instruct</option>
+<!--
+										<option value="internvl2.5-8b">- InternVL2.5 8B MPO</option>
+										<option value="deepseek-r1">- DeepSeek R1</option>
+										<option value="deepseek-r1-distill-llama-70b">? DeepSeek-R1-Distill-Llama-70B</option>
+										<option value="llama-3.3-70b-instruct">- Llama-3.3-70B-Instruct</option>
+										<option value="llama-3.1-sauerkrautlm-70b-instruct">- LLama 3.1 SauerkrautLM Instruct</option>
+										<option value="">? Llama 3.1 Nemotron 70B</option>
+										<option value="mistral-large-instruct">- Mistral Large Instruct</option>										
+										<option value="e5-mistral-7b-instruct">- E5 Mistral 7B Instruct</option>
+										<option value="qwen2-72b-instruct">- Qwen 2.5 72B Instruct</option>
+										
+										
+										<option value="">? Qwen 3 235B A22B Instruct (non-thinking)</option>
+										<option value="">? Qwen 3 Coder 30B A3B Instruct</option>
+										<option value="">? Tongyi DeepResearch 30B A3B</option>
+-->
+
+<!--									nicht mehr unterstützt
+										<option value="mixtral-8x7b-instruct">Mixtral-8x7b-instruct</option>-->
 									</select>';
 							}
 							else{
