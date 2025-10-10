@@ -147,7 +147,7 @@
   grid-gap: 1.5rem;
   overflow: hidden;
   padding: 2rem;
-  max-width: calc(60ch + 4rem);
+  max-width: calc(100ch + 4rem);
   margin: auto;
 }
 
@@ -208,7 +208,7 @@
 }
 
 .message-content {
-  max-width: 60ch;
+  max-width: 100ch;
   margin: auto;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -332,7 +332,7 @@
 }
 
 .input {
-  max-width: 60ch;
+  max-width: 100ch;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 3rem;
@@ -499,7 +499,7 @@
 }
 
 .modal-content {
-  /* max-width: 60ch; */
+  /* max-width: 100ch; */
   margin-right: 1px;
   padding: 1rem 3rem;
   display: flex;
@@ -590,7 +590,7 @@
 
 
 .userpost {
-  max-width: 60ch;
+  max-width: 100ch;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 3rem;
