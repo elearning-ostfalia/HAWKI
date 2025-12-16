@@ -1,5 +1,11 @@
 {
-    "ADD YOUR CURSTOM KEYS HERE": ""
-
-
+    "ADD YOUR CURSTOM KEYS HERE": "",
+    "Guidelines": "Leitfaden zum Umgang mit OLAF",
+    "Cnf_tokenMsg1": "Bitte bewahre diesen Token sicher auf und verwende ihn mit Bedacht, um dein Konto zu schützen. Wenn OLAF verdächtiges Verhalten feststellt, wird dieser Token widerrufen.",
+    "Logout_Warning":"Um OLAF weiterhin zu nutzen, müssen Sie diese Bedingungen akzeptieren.<strong>Klicken Sie auf „Bestätigen“, um sich von OLAF abzumelden.</strong>",
+    "Exported_At":"Exportiert aus OLAF am:",
+    "AboutHAWKI": "Über OLAF",
+    "AboutHAWKI_OlafInfo": "Olaf steht für <b>O</b>stfalia <b>L</b>earning <b>A</b>ssistant <b>F</b>ramework.",
+    "MistakeWarning": "OLAF kann Fehler machen. Überprüfe wichtige Informationen.",
+    "Api_Warning": "Um die Sprachmodelle von OLAF auch in anderen Anwendungen nutzen zu können, kann ein eigener API-Schlüssel generiert werden. Schreibe dazu eine E-Mail an deine IT, die den API-Key für dich generieren und dir zusenden wird."
 }
