@@ -1,6 +1,9 @@
 #!/bin/bash
 
-docker compose up --pull always -d
+# image is not pulled. So do not pull always!
+
+docker compose up -d
+#docker compose up --pull always -d
 
 # Stop if the previous command failed
 if [ $? -ne 0 ]; then
