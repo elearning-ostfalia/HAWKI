@@ -126,11 +126,11 @@
 						Team
 					</div>
 					<div class="submenu">
-						<div class="submenu-item" onclick="load(this, 'finance.php')"><?php echo $translation["Finance"]; ?></div>
+<!--						<div class="submenu-item" onclick="load(this, 'finance.php')"><?php echo $translation["Finance"]; ?></div> -->
 						<div class="submenu-item" onclick="load(this, 'science.php')"><?php echo $translation["Research"]; ?></div>
 						<div class="submenu-item" onclick="load(this, 'marketing.php')"><?php echo $translation["Marketing"]; ?></div>
 						<div class="submenu-item" onclick="load(this, 'programming.php')"><?php echo $translation["Programming"]; ?></div>
-						<div class="submenu-item" onclick="load(this, 'law.php')"><?php echo $translation["LegalConsultation"]; ?></div>
+<!--						<div class="submenu-item" onclick="load(this, 'law.php')"><?php echo $translation["LegalConsultation"]; ?></div> -->
 						<div class="submenu-item" onclick="load(this, 'socialmedia.php')"><?php echo $translation["SocialMedia"]; ?></div>
 					</div>
 
