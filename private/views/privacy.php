@@ -32,8 +32,8 @@
 
                 <p>
                     Die Ostfalia Hochschule für angewandte Wissenschaften – Hochschule Braunschweig/Wolfenbüttel
-                    ist eine Körperschaft des öffentlichen Rechts und wird durch den Vizepräsidenten
-                    Herrn Volker Küch gesetzlich vertreten.
+                    ist eine Körperschaft des öffentlichen Rechts und wird vertreten durch den
+                    Präsidenten (m.d.W.d.G.b.), Dipl.-Ing. Volker Küch M.A..
                 </p>
 
                 <h2> Name und Anschrift des Datenschutzbeauftragten:</h2>

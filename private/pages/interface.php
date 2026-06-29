@@ -221,14 +221,11 @@
 									'<select id="model-selector" onchange="OnDropdownModelSelection()">
 										<option value="' . GPT_AI_MODEL . '" selected>OpenAI ' . GPT_AI_MODEL . '</option>
 										
+										<!--
 										<option value="mistral-large-3-675b-instruct-2512">Mistral Large 3 675B Instruct 2512</option>
 										<option value="glm-4.7">GLM-4.7</option>
 										<option value="qwen3-235b-a22b">Qwen 3 235B A22B Thinking 2507</option>
-										<!--
-										<option value="qwen3-omni-30b-a3b-instruct"></option>
-										<option value="qwen3-vl-30b-a3b-instruct"></option>
-										-->
-										<!-- <option value="openai-gpt-oss-120b">GPT OSS 120B</option> --> <!-- NÖ -->
+				
 										<option value="qwen3-30b-a3b-thinking-2507">Qwen 3 30B A3B Thinking 2507</option>
 										<option value="gemma-3-27b-it">Gemma 3 27B Instruct</option>
 										<option value="devstral-2-123b-instruct-2512">Devstral 2 123B Instruct 2512 (Coding)</option>
@@ -236,29 +233,8 @@
 										<option value="medgemma-27b-it">MedGemma 27B Instruct (Medizinisch)</option>
 
 										<option value="meta-llama-3.1-8b-instruct">Llama 3.1 8b Instruct (alt)</option>
-										
-										<!--
-										<option value="meta-llama-3.1-8b-instruct">Llama 3.1 8b Instruct</option>
-										<option value="codestral-22b">Codestral 22B</option>
-										<option value="qwen2.5-vl-72b-instruct">Qwen 2.5 VL 72B Instruct</option>
-										<option value="qwen2.5-coder-32b-instruct">Qwen 2.5 Coder 32B Instruct</option>
-										-->
-<!--
-										<option value="internvl2.5-8b">- InternVL2.5 8B MPO</option>
-										<option value="deepseek-r1">- DeepSeek R1</option>
-										<option value="deepseek-r1-distill-llama-70b">? DeepSeek-R1-Distill-Llama-70B</option>
-										<option value="llama-3.3-70b-instruct">- Llama-3.3-70B-Instruct</option>
-										<option value="llama-3.1-sauerkrautlm-70b-instruct">- LLama 3.1 SauerkrautLM Instruct</option>
-										<option value="">? Llama 3.1 Nemotron 70B</option>
-										<option value="mistral-large-instruct">- Mistral Large Instruct</option>										
-										<option value="e5-mistral-7b-instruct">- E5 Mistral 7B Instruct</option>
-										<option value="qwen2-72b-instruct">- Qwen 2.5 72B Instruct</option>
-										
-										
-										<option value="">? Qwen 3 235B A22B Instruct (non-thinking)</option>
-										<option value="">? Qwen 3 Coder 30B A3B Instruct</option>
-										<option value="">? Tongyi DeepResearch 30B A3B</option>
--->
+-->										
+
 
 									</select>';
 							}
